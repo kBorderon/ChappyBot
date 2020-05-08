@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>bot-discord</h1>
+<h2>Partie 1 - Présentation</h2>
+<p>Ce projet consiste en la réalisation d'un bot Discord. Ce dernier devra réaliser différentes interactions (commandes), nous utiliserons différentes API afin d'améliorer ses capacités de fonctionnement.
+Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis n'importe quelle autre plateforme (Windows, Mac, Linux, autre carte de développement).
+Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube <a href="https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA" title="lien vers la chaîne Youtube de getCodingKnowledge">getCodingKnowledge</a>.</p>
+<h3>Auteur</h3>
+<p><strong>Borderon Kévin</strong></p>
+<h2>Partie 2 - Prérequis</h2>
+<p>Vous devez au préalable, avoir installé sur votre machine Git et Node.js.<br>
+Pour savoir si vous possédez git, tapez la commande dans un terminal : <strong>git --version</strong> (vous devriez voir apparaître la version de git sinon une erreur).<br>
+Pour savoir si vous possédez nodejs, tapez la commande <strong>node --version</strong> (vous devriez voir apparaître la version de node sinon une erreur) et pour npm : <strong>npm --version</strong> (pareil, obtention de sa version ou erreur).</p>
+<h2>Partie 3 - Installation du bot</h2>
+<p>Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (<strong>git checkout &lt;nom_branche&gt;</strong>), déplacez-vous sur cette branche (<strong>git checkout &lt;nom_branche&gt;</strong>) puis récupérez le contenu présent sur le dépôt git (<strong>git pull</strong>).<br>
+Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire <strong>git checkout version_1</strong> (suivez ensuite les autres commandes).</p>
+<p>Une fois la branche récupérée, placez-vous dans le dossier bot-discord. Executez la commande npm install, puis npm run docs.</p>
+<p>L'arborescence du dossier, devra être la suivante :</p>
+<pre class="prettyprint source"><code>\ 
+	\ bot-discord
+		\commandes
+		\configuration
+		\contenu
+		\docs
+		\node_modules
+		- bot.js
+		- jsdoc.json
+		- package.json
+		- package-lock.json
+		- README.md
+</code></pre>
+<h3>Arborescence du projet</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Élément</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/bot-discord</code></td>
+<td style="text-align:left">Répertoire du projet du bot discord</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/commandes</code></td>
+<td style="text-align:left">Répertoire contenant des sous-dossiers, qui comportent nos fichiers commandes .js</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/configuration</code></td>
+<td style="text-align:left">Répertoire contenant nos fichiers de configuration pour les API que nous allons utiliser</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/contenu</code></td>
+<td style="text-align:left">Répertoire contenant les différents fichiers (image etc.) utilisés par nos commandes</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/docs</code></td>
+<td style="text-align:left">Répertoire contenant notre documentation, ouvrez index.html dans votre navigateur</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/node_modules</code></td>
+<td style="text-align:left">Répertoire contenant les modules node nécessaires pour notre bot</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>bot.js</code></td>
+<td style="text-align:left">Fichier principale qui lance l'exécution de notre bot</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>jsdoc.json</code></td>
+<td style="text-align:left">Fichier de configuration pour le module Jsdoc, réalisant notre documentation</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>package.json</code></td>
+<td style="text-align:left">Fichier de configuration, permettant l'installation des modules node nécessaires</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>package-lock.json</code></td>
+<td style="text-align:left">Fichier généré lorsque l'on utilise la commande npm install dans le dossier bot-discord</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>README.md</code></td>
+<td style="text-align:left">Fichier présentant le projet de notre bot Discord</td>
+</tr>
+</tbody>
+</table>
+<p>Si vous souhaitez plus de détails, n'hésitez pas à regarder directement les fichiers ou à me contacter.</p>
+<h2>Partie 4 - Configuration du Bot</h2>
+<p>Comme je le disais plus haut, ce bot sera présent sur un Raspberry Pi. Pour pouvoir créer et customiser votre propre bot personnel, je vous invite à consulter la première partie ce tutoriel en Anglais <a href="https://discordpy.readthedocs.io/en/latest/discord.html" title="lien du tutoriel Anglais">Creating a Bot Account</a>, celle qui présente la création du Bot sur la plateforme Discord dédiée aux développeurs.<br>
+Vous pouvez également trouver d'autres tutoriels en Français ou dans une autre langue concernant la création d'un bot.</p>
+<p>Une fois votre bot créé, customisé (nom, image etc.), vous <strong>devez modifier le fichier config.js avant l'utilisation du bot, remplacez &lt;votre_token&gt; par le token de votre bot</strong> présent sur la plateforme où vous avez créé une application et un bot. Le token se situe à l'emplacement suivant : onglet Bot, Build-A-Bot et Token, copiez le token présent dans notre fichier.</p>
+<p>Votre bot est dorénavant lié à ce projet, il utilisera ce qui y sera développé (faites des gits pull régulièrement) en plus de ce que vous développerez. Pour ajouter votre bot à un serveur Discord, je vous invite à consulter le tutoriel précédent.</p>
+<h2>Partie 5 - Activation du bot</h2>
+<p>Pour activer le bot, <strong>placez-vous dans le dossier bot-discord, puis exécutez la commande : node bot.js</strong>, vous devriez voir les commandes chargées, ainsi que le message connexion du bot ...<br>
+Tant que votre terminal sera ouvert avec la commande précédente saisie, le bot fonctionnera, nous vous indiquerons plus tard comment lancer en arrière-plan le bot.</p>
+<h2>Partie 6 - Utilisation du bot</h2>
+<p>Pour utiliser correctement le bot, vous devez écrire dans un channel de votre discord <strong>?nom_commande &lt;argument_1&gt; &lt;argument_2&gt; (etc. d'autre arguments si nécessaires)</strong>. La première commande que je vous invite à tester est la commande <strong>?help</strong>. Cette commande vous indiquera l'ensemble des commandes disponibles sur votre serveur Discord.<br>
+Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &lt;nom_commande&gt;</strong>, par exemple <strong>?help ping</strong> vous décrira le fonctionnement de <strong>?ping</strong>.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chargerCommandes">chargerCommandes</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri May 08 2020 19:46:59 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
