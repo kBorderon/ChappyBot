@@ -1,7 +1,7 @@
 {
-	"name": "discord-bot-freekills",
+	"name": "bot-discord",
 	"version": "1.0.0",
-	"description": "Un bot pour le serveur discord Les Free Kills",
+	"description": "Un bot pour un serveur discord",
 	"main": "bot.js",
 	"scripts": {
 		"docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
