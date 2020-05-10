@@ -55,8 +55,11 @@ Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels 
 Pour savoir si vous possédez git, tapez la commande dans un terminal : <strong>git --version</strong> (vous devriez voir apparaître la version de git sinon une erreur).<br>
 Pour savoir si vous possédez nodejs, tapez la commande <strong>node --version</strong> (vous devriez voir apparaître la version de node sinon une erreur) et pour npm : <strong>npm --version</strong> (pareil, obtention de sa version ou erreur).</p>
 <h2>Partie 3 - Installation du bot</h2>
-<p>Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (<strong>git checkout &lt;nom_branche&gt;</strong>), déplacez-vous sur cette branche (<strong>git checkout &lt;nom_branche&gt;</strong>) puis récupérez le contenu présent sur le dépôt git (<strong>git pull</strong>).<br>
+<p>Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (<strong>git checkout &lt;nom_branche&gt;</strong>), déplacez-vous sur cette branche (<strong>git checkout &lt;nom_branche&gt;</strong>) puis récupérez le contenu présent sur le dépôt git (<strong>git pull</strong>).</p>
+<blockquote>
+<p>Pour récupérer le contenu du bot discord, veuillez vous déplacer sur une autre branche que la master, celle-ci ne présente que le projet.<br>
 Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire <strong>git checkout version_1</strong> (suivez ensuite les autres commandes).</p>
+</blockquote>
 <p>Une fois la branche récupérée, placez-vous dans le dossier bot-discord. Executez la commande npm install, puis npm run docs.</p>
 <p>L'arborescence du dossier, devra être la suivante :</p>
 <pre class="prettyprint source"><code>\ 
@@ -65,6 +68,7 @@ Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, 
 		\configuration
 		\contenu
 		\docs
+		\evenements
 		\node_modules
 		- bot.js
 		- jsdoc.json
@@ -100,6 +104,10 @@ Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, 
 <tr>
 <td style="text-align:left"><code>/docs</code></td>
 <td style="text-align:left">Répertoire contenant notre documentation, ouvrez index.html dans votre navigateur</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/evenements</code></td>
+<td style="text-align:left">Répertoire contenant les évènements de notre bot</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>/node_modules</code></td>
@@ -149,13 +157,13 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chargerCommandes">chargerCommandes</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun May 10 2020 14:01:41 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun May 10 2020 20:14:48 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -51,7 +51,7 @@ const client = new Client();
  */
 const chargerCommandes = (repertoire = "./commandes/") => {
 	readdirSync(repertoire).forEach(repertoires => {
-		/* Récupération des fichiers .js comportant les commandes du bot */
+		/* Récupération des fichiers .js comportant les évènements associés au bot */
 		const commandes = readdirSync(`${repertoire}/${repertoires}/`).filter(fichiers => fichiers.endsWith(".js"));
 
 		/* Activation de chacune de nos commandes */
@@ -64,82 +64,35 @@ const chargerCommandes = (repertoire = "./commandes/") => {
 	});
 };
 
-chargerCommandes();
+/** 
+ * Initialisation et récupération des fichiers des évènements associés au bot 
+ * @author Kévin Borderon
+ * @param {string} repertoire - Le répertoire contenant l'ensemble des évènements à récupérer
+ */
+const chargerEvenements = (repertoire = "./evenements/") => {
+	readdirSync(repertoire).forEach(repertoires => {
+		/* Récupération des fichiers .js comportant les évènements du bot */
+		const evenements = readdirSync(`${repertoire}/${repertoires}/`).filter(fichiers => fichiers.endsWith(".js"));
+
+		/* Activation de nos évènements */
+		for(const fichier of evenements){
+			const evenement = require(`${repertoire}/${repertoires}/${fichier}`);
 		
-/**
- * Évènement message
- * @author Kévin Borderon
- * @event Client#message
- * @type {object}
- * @property {Message} message - Le message reçu par le bot
- */
-client.on('message', message => {
-  /* Récupération des arguments passés en paramètre lors de la saisie d'une commande */
-	const args = message.content.slice(PREFIX.length).split(/ +/);
+			/* On récupère le nom du fichier actuel qui correspond au nom de l'évènement, par exemple message pour message.js */
+			const nomEvenement = fichier.split(".")[0];
 
-	/* Correspond au premier argument, il s'agit obligatoirement du nom de notre commande à utiliser */
-	const nomCommande = args.shift().toLowerCase();
+			/* On charge l'évènement en appliquant une liaison entre les paramètres nécessaires et le nom de l'évènement */
+			client.on(nomEvenement, evenement.bind(null, client));
+			console.log(`Évènement chargé : ${nomEvenement}`);
+		};
+	});
+};
 
-	/* On récupère la commande associée au nom de la commande saisie précédemment */
-	const commande = client.commandes.get(nomCommande) || client.commandes.find(cmd => cmd.help.aliases &amp;&amp; cmd.help.aliases.includes(nomCommande));
+/* Chargement de toutes les commandes disponibles */
+chargerCommandes();
 
-  /* On bloque la commande selon les critères suivants :
-	 *	1) La commande ne commence pas par le préfix défini ;
-	 *  2) La commande a été exécutée par le bot, on choisit donc de l'ignorer ;
-	 *  3) La commande n'est pas répertoriée que ce soit par son nom par défaut ou aliases
-   */
-	if(!message.content.startsWith(PREFIX) || message.author.bot || !commande){
-		return;
-	}
-
-	if(commande.help.args &amp;&amp; !args.length){
-		let reponseNoArgs = `Pour utiliser cette commande, il nous faut des arguments, ${message.author} !`;
-
-		if(commande.help.utilisation){
-			reponseNoArgs += `\nVoici comment utiliser correctement la commande : \`${PREFIX}${commande.help.nom} ${commande.help.utilisation}\``
-		}
-
-		return message.channel.send(reponseNoArgs);
-	}
-
-  /* Ajout de notre commande dans la liste des cooldowns si celle-ci n'a encore jamais été utilisée pour le moment */
-	if(!client.cooldowns.has(commande.help.nom)){
-		client.cooldowns.set(commande.help.nom, new Collection());
-	}
-
-	const tempsActuel = Date.now();
-	const	tStamps = client.cooldowns.get(commande.help.nom);
-	const quantiteCooldown = (commande.help.cooldown || DEFAULT_COOLDOWN) * 1000;  /* Conversion en ms */
-
-	/* Actualisation des cooldowns */
-	if(tStamps.has(message.author.id)){
-		const tempsExpirationCooldown = tStamps.get(message.author.id) + quantiteCooldown;
-
-		if(tempsActuel &lt; tempsExpirationCooldown) {
-			tempsAttente = (tempsExpirationCooldown - tempsActuel) / 1000;
-
-			return message.reply(`Merci d'attendre ${tempsAttente.toFixed(0)} seconde(s) avant d'utiliser de nouveau la commande \`${commande.help.nom}\`.`);
-		}
-	}
-
-	/* Actualisation du temps depuis la dernière commmande identique utilisée par l'utilisateur */
-	tStamps.set(message.author.id, tempsActuel);
-
-	/* Suppression de la collection lorsque l'utilisateur peut se servir de nouveau de la commande */
-	setTimeout(() => tStamps.delete(message.author.id), quantiteCooldown);
-
-  /* On appelle l'exécution de la commande */
-	commande.run(client, message, args);
-});
-
-/**
- * Évènement ready
- * @author Kévin Borderon
- * @event Client#ready
- * @type {object}
- * @property {} - Renvoie l'indication de connexion du bot
- */
-client.on('ready', () => console.log('\nConnexion du bot ...'));
+/* Chargement de tous les évènements disponibles */
+chargerEvenements();
 
 /* Connexion de notre bot à notre serveur Discord */
 client.login(TOKEN);
@@ -153,13 +106,13 @@ client.login(TOKEN);
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chargerCommandes">chargerCommandes</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun May 10 2020 14:01:41 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun May 10 2020 20:14:48 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

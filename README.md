@@ -18,7 +18,8 @@ Pour savoir si vous possédez nodejs, tapez la commande **node --version** (vous
 ## Partie 3 - Installation du bot
 
 Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (**git checkout <nom_branche>**), déplacez-vous sur cette branche (**git checkout <nom_branche>**) puis récupérez le contenu présent sur le dépôt git (**git pull**).  
-Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire **git checkout version_1** (suivez ensuite les autres commandes).  
+> Pour récupérer le contenu du bot discord, veuillez vous déplacer sur une autre branche que la master, celle-ci ne présente que le projet.   
+> Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire **git checkout version_1** (suivez ensuite les autres commandes).  
 
 Une fois la branche récupérée, placez-vous dans le dossier bot-discord. Executez la commande npm install, puis npm run docs.  
 
@@ -31,6 +32,7 @@ L'arborescence du dossier, devra être la suivante :
 		\configuration
 		\contenu
 		\docs
+		\evenements
 		\node_modules
 		- bot.js
 		- jsdoc.json
@@ -41,13 +43,14 @@ L'arborescence du dossier, devra être la suivante :
 
 ### Arborescence du projet
 
-| Élément									| Description																																											|
+| Élément									| Description																																									|
 | :-------------------		| :---------------------------------------------------------------------------------------		|
 | `/bot-discord` 					| Répertoire du projet du bot discord 																												| 
 | `/commandes`						| Répertoire contenant des sous-dossiers, qui comportent nos fichiers commandes .js 					|
 | `/configuration`				| Répertoire contenant nos fichiers de configuration pour les API que nous allons utiliser	 	|
 | `/contenu`							| Répertoire contenant les différents fichiers (image etc.) utilisés par nos commandes 				|
 | `/docs`									| Répertoire contenant notre documentation, ouvrez index.html dans votre navigateur 					|
+| `/evenements`						| Répertoire contenant les évènements de notre bot																						|
 |	`/node_modules` 				| Répertoire contenant les modules node nécessaires pour notre bot 														|
 | `bot.js`								| Fichier principale qui lance l'exécution de notre bot 																			|
 | `jsdoc.json`						| Fichier de configuration pour le module Jsdoc, réalisant notre documentation 								|
