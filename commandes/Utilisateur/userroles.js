@@ -59,7 +59,7 @@ module.exports.help = {
 	args: true,
 	categorie: 'Utilisateur',
 	cooldown: 10,
-	description: 'Renvoie les rôles de l\'utilisateur demandé.',
+	description: 'Renvoie les rôles de l\'utilisateur mentionné.',
 	nom: 'userroles',
 	utilisation: '<@peudo_du_joueur>'
 };

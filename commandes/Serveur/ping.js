@@ -34,7 +34,7 @@ module.exports.help = {
 	args: false,
 	categorie: 'Serveur',
 	cooldown: 10,
-	description: 'Renvoie le délai du bot',
+	description: 'Renvoie la latence du bot.',
 	nom: 'ping',
 	utilisation: 'aucun argument'
 };

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: commandes/Utilisateur/userroles.js</title>
+    <title>JSDoc: Source: commandes/Meme/sel.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: commandes/Utilisateur/userroles.js</h1>
+    <h1 class="page-title">Source: commandes/Meme/sel.js</h1>
 
     
 
@@ -26,70 +26,68 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { Discord } = require('discord.js');
+            <pre class="prettyprint source linenums"><code>const { MessageEmbed, MessageAttachment } = require('discord.js');
 const { PREFIX } = require('../../configuration/config.js');
+const image = new MessageAttachment('./contenu/sel.png')
 
 /**
- * Run de la commande userroles
+ * Run de la commande sel
  * @author Kévin Borderon	
- * @module userroles/run
+ * @module sel/run
  * @param {Client} client - Référence au bot
  * @param {Message} message - Le message reçu par le bot
  * @param {Array.&lt;String>} categorie - Les arguments du message
  */
 module.exports.run = (client, message, args) => {
 	/* On récupère la première mention d'un utilisateur dans les arguments args, si aucune mention utilisateur n'est présente, on return null */
-	const mentionUtilisateur = message.mentions.users.first() || null;
-	let messageRetour = '';
+	const mentionUtilisateur = message.mentions.users.first() || null;  //message.mentions.users.first() || null;
 
 	/* Si mentionUtilisateur != null */
-	if(mentionUtilisateur){
-		/* Liste des rôles dont dispose l'utilisateur mentionné */
-		const listeRoles = Array.from(message.mentions.members.first().roles.cache.values());
-		const tailleListeRoles = listeRoles.length;
+		if(mentionUtilisateur) {
+		contenu = new MessageEmbed()
+			.setColor("#0014f2")
+			.setTitle("Tu sales !")
+			.setURL("https://i.kym-cdn.com/photos/images/original/001/462/554/ebc.jpg")
+			.setTimestamp()
+			.setDescription(`Image de mon coéquipier ${mentionUtilisateur} le marais salant !`)
+			.setThumbnail(mentionUtilisateur.displayAvatarURL())
+			.attachFiles(image)
+			.setFooter(`${message.author.username} : "Fini de saler !"`, message.author.avatarURL())
+			.setImage('attachment://sel.png');
+		
+		message.channel.send(contenu);
 
-		messageRetour += `L'utilisateur ${mentionUtilisateur.tag} dispose des rôles suivants :\n`;
-
-		for(let index = 0; index &lt; tailleListeRoles; index++){
-			/* S'il s'agit du dernier rôle le message aura à la fin un . sinon un ;*/
-			if(index == tailleListeRoles - 1){
-				messageRetour += `\t- ${listeRoles[index].name}.`;
-			} else {
-				messageRetour += `\t- ${listeRoles[index].name} ;\n`;
-			}
-		}
 	/* Si mentionUtilisateur == null */
 	} else {
-
-			messageRetour += `Erreur, veuillez utilisez la commande la façon suivante : ${PREFIX}${this.help.nom} ${this.help.utilisation}`;
+		const messageRetour = `Erreur, veuillez utilisez la commande la façon suivante : ${PREFIX}${this.help.nom} ${this.help.utilisation}`;
+		
+		/* On envoie le message préparé, avec pour caractéristique l'utilisation de caractères Ascii */
+		message.channel.send(messageRetour, {
+			code: 'asciidoc'}
+		);
 	}
-
-	/* On envoie le message préparé, avec pour caractéristique l'utilisation de caractères Ascii */
-	message.channel.send(messageRetour, {
-		code: 'asciidoc'}
-	);
 };
 
 /**
- * Help de la commande userroles
+ * Help de la commande sel
  * @author Kévin Borderon	
- * @module userroles/help
- * @param {Array.&lt;Userroles>} ['userroles'] - Indique les aliases de la commande userroles
+ * @module sel/help
+ * @param {Array.&lt;Sel>} ['sel'] - Indique les aliases de la commande sel
  * @param {boolean} args - Indique la présence OBLIGATOIRE d'arguments
- * @param {string} categorie - Indique la catégorie de la commande userroles
- * @param {number} cooldown - Indique le cooldown de la commande userroles avant sa prochaine utilisation de la part du même utilisateur
- * @param {string} description - Indique la description de la commande userroles
- * @param {string} nom - Indique le nom de la commande userroles
- * @param {string} utilisation - Indique l'utilisation de la commande userroles
+ * @param {string} categorie - Indique la catégorie de la commande sel
+ * @param {number} cooldown - Indique le cooldown de la commande sel avant sa prochaine utilisation de la part du même utilisateur
+ * @param {string} description - Indique la description de la commande sel
+ * @param {string} nom - Indique le nom de la commande sel
+ * @param {string} utilisation - Indique l'utilisation de la commande sel
  */
 module.exports.help = {
-	aliases:['userroles'],
+	aliases: ['sel'],
 	args: true,
-	categorie: 'Utilisateur',
-	cooldown: 10,
-	description: 'Renvoie les rôles de l\'utilisateur mentionné.',
-	nom: 'userroles',
-	utilisation: '&lt;@peudo_du_joueur>'
+	categorie: 'Meme',
+	cooldown: 20,
+	description: 'Renvoie l\'image de l\'utilisateur salant.',
+	nom: 'sel',
+	utilisation: '&lt;@pseudo_du_joueur>'
 };
 </code></pre>
         </article>
