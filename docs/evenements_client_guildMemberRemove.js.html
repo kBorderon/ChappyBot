@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: commandes/Serveur/ping.js</title>
+    <title>JSDoc: Source: evenements/client/guildMemberRemove.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: commandes/Serveur/ping.js</h1>
+    <h1 class="page-title">Source: evenements/client/guildMemberRemove.js</h1>
 
     
 
@@ -26,45 +26,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { PREFIX } = require('../../configuration/config.js');
+            <pre class="prettyprint source linenums"><code>const { MessageEmbed, MessageAttachment } = require("discord.js");
+const image = new MessageAttachment('./contenu/au_revoir.png');
 
 /**
- * Run de la commande ping
- * @author Kévin Borderon	
- * @module ping/run
- * @param {Client} client - Référence au bot
- * @param {Message} message - Le message reçu par le bot
- * @param {Array.&lt;String>} categorie - Les arguments du message
+ * Évènement guildMemberRemove
+ * @author Kévin Borderon
+ * @event Client#guildMemberRemove
+ * @type {object}
+ * @property {Client} client - Référence au bot
+ * @property {GuildMember} member - Référence au membre quittant le serveur discord
  */
-module.exports.run = (client, message, args) => {
-	/* Message déterminant la latence du bot */
-	message.channel.send("Ping...").then(monMessage => {
-		let ping = monMessage.createdTimestamp - message.createdTimestamp;
+module.exports = (client, member) => {
+	const nomServeur = member.guild.name;
+	const utilisateur = member.user;
 
-		monMessage.edit(`Latence du bot ${ping} ms.`);	
-	});
-};
+	const contenu = new MessageEmbed()
+			.setColor("#d31d1d")
+			.setTitle(`Au revoir à ${utilisateur.username}`)
+			.setURL("https://img.over-blog-kiwi.com/1/31/67/43/20161128/ob_419371_au-revoir-2.jpg")
+			.setTimestamp()
+			.setDescription(`Au revoir, merci de ta visite sur le seveur Discord ${nomServeur} !`)
+			.setThumbnail(utilisateur.displayAvatarURL())
+			.attachFiles(image)
+			.setFooter("Un utilisateur nous a quitté")
+			.setImage('attachment://au_revoir.png');
 
-/**
- * Help de la commande ping
- * @author Kévin Borderon	
- * @module ping/help
- * @param {Array.&lt;Ping>} ['ping'] - Indique les aliases de la commande ping
- * @param {boolean} args - Indique la présence OBLIGATOIRE d'arguments, ici ils ne sont pas obligatoires donc false
- * @param {string} categorie - Indique la catégorie de la commande ping
- * @param {number} cooldown - Indique le cooldown de la commande ping avant sa prochaine utilisation de la part du même utilisateur
- * @param {string} description - Indique la description de la commande ping
- * @param {string} nom - Indique le nom de la commande ping
- * @param {string} utilisation - Indique l'utilisation de la commande ping
- */
-module.exports.help = {
-	aliases:['ping'],	
-	args: false,
-	categorie: 'Serveur',
-	cooldown: 10,
-	description: 'Renvoie la latence du bot.',
-	nom: 'ping',
-	utilisation: 'aucun argument'
+	/* On envoie le message préparé, sur le channel ayant l'ID cible */
+		client.channels.cache.get('703623777061175428').send(contenu);
 };
 </code></pre>
         </article>
