@@ -25,5 +25,5 @@ module.exports = (client, member) => {
 			.setImage('attachment://au_revoir.png');
 
 	/* On envoie le message préparé, sur le channel ayant l'ID cible */
-		client.channels.cache.get('703623777061175428').send(contenu);
+	client.channels.cache.get('<votre_id_channel>').send(contenu); /* A REMPLACER par l'id de votre salon cible  */
 };
