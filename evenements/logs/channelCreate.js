@@ -31,5 +31,5 @@ module.exports = async (client, channel) => {
 			.setFooter(executor.username, executor.displayAvatarURL());
 
 	/* On envoie le message préparé, sur le channel ayant l'ID cible */
-	client.channels.cache.get('<votre_id_channel>').send(contenu); /* A REMPLACER par l'id de votre salon cible  */
+	client.channels.cache.get('711299071108841522').send(contenu); /* Salon logs du serveur discord Tests Bot Discord */
 };

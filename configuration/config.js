@@ -1,3 +1,3 @@
-exports.TOKEN = "<votre_token>";
+exports.TOKEN = "NzExMzA0NzE2ODI2NzA2MDQy.XsBEtA.6TdKjh4H5eSC8bFa2LoWW0FZhNQ";
 exports.PREFIX = "?";
 exports.DEFAULT_COOLDOWN = 5;

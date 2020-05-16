@@ -4,7 +4,8 @@
 	"description": "Un bot pour un serveur discord",
 	"main": "bot.js",
 	"scripts": {
-		"docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
+		"docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
+		"start": "node bot.js"
 	},
 	"author": "Kévin Borderon",
 	"license": "MIT",
