@@ -1,7 +1,8 @@
 const { Client, Collection } = require('discord.js');
 const { http } = require('http');
 const { readdirSync } = require('fs');
-const { TOKEN, PREFIX, DEFAULT_COOLDOWN } = require('./configuration/config.js');
+const { PREFIX, DEFAULT_COOLDOWN } = require('./configuration/config.js');
+require('dotenv').config(); /* FICHIER POUR HEROKU, ALLEZ VOIR LES AUTRES BRANCHES DU DEPOT GIT */
 
 /**
 	* Classe initialisant le bot Discord
@@ -67,4 +68,4 @@ chargerCommandes();
 chargerEvenements();
 
 /* Connexion de notre bot à notre serveur Discord */
-client.login(TOKEN);
+client.login();
