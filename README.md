@@ -4,7 +4,10 @@
 
 Ce projet consiste en la réalisation d'un bot Discord. Ce dernier devra réaliser différentes interactions (commandes), nous utiliserons différentes API afin d'améliorer ses capacités de fonctionnement. 
 Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis n'importe quelle autre plateforme (Windows, Mac, Linux, autre carte de développement). 
-Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube [getCodingKnowledge](https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA "lien vers la chaîne Youtube de getCodingKnowledge").
+Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube [**getCodingKnowledge**](https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA "lien vers la chaîne Youtube de getCodingKnowledge").  
+
+> #Nouveauté : Déploiement du bot sur la plateforme Heroku.  
+> Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-joint (**[lien](https://discord.gg/u6pGvbG)**). Le bot y est déployé grâce à la plateforme **[Heroku](https://www.heroku.com/)**. **Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.**
 
 ### Auteur 
 
@@ -21,7 +24,7 @@ Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhai
 > Pour récupérer le contenu du bot discord, veuillez vous déplacer sur une autre branche que la master, celle-ci ne présente que le projet.   
 > Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire **git checkout version_1** (suivez ensuite les autres commandes).  
 
-Une fois la branche récupérée, placez-vous dans le dossier bot-discord. Executez la commande npm install, puis npm run docs.  
+Une fois la branche récupérée, placez-vous dans le dossier bot-discord. Executez la commande **npm install**, puis **npm run docs**.  
 
 L'arborescence du dossier, devra être la suivante :
 
