@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: evenements/client/guildMemberAdd.js</title>
+    <title>JSDoc: Module: membres/run</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,48 +17,234 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: evenements/client/guildMemberAdd.js</h1>
+    <h1 class="page-title">Module: membres/run</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const { MessageEmbed, MessageAttachment } = require("discord.js");
-const image = new MessageAttachment('./contenu/bienvenue.png');
+        
+            
+        
+    
+</header>
 
-/**
- * Évènement guildMemberAdd
- * @author Kévin Borderon
- * @event Client#guildMemberAdd
- * @type {object}
- * @property {Client} client - Référence au bot
- * @property {GuildMember} member - Référence au membre ayant rejoint le serveur discord
- */
-module.exports = (client, member) => {
-	const nomServeur = member.guild.name;
-	const utilisateur = member.user;
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Run de la commande membres</p></div>
+        
 
-	const contenu = new MessageEmbed()
-			.setColor("#2e990a")
-			.setTitle(`Bienvenue à ${utilisateur.username}`)
-			.setURL("https://www.cnajep.asso.fr/wp-content/uploads/2018/10/bienvenue.jpg")
-			.setTimestamp()
-			.setDescription(`Bienvenue parmis nous, sur le seveur Discord ${nomServeur} !`)
-			.setThumbnail(utilisateur.displayAvatarURL())
-			.attachFiles(image)
-			.setFooter("Un utilisateur nous a rejoint")
-			.setImage('attachment://bienvenue.png');
+        
+            
 
-	/* On envoie le message préparé, sur le channel ayant l'ID cible */
-	client.channels.cache.get('711299071108841522').send(contenu); /* Salon logs du serveur discord Tests Bot Discord */
-	client.channels.cache.get('711298566873677886').send(contenu); /* Salon général du serveur discord Tests Bot Discord */
-};
-</code></pre>
-        </article>
-    </section>
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>client</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Client.html">Client</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Référence au bot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Message</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Le message reçu par le bot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>categorie</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Les arguments du message</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Kévin Borderon</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="commandes_Serveur_membres.js.html">commandes/Serveur/membres.js</a>, <a href="commandes_Serveur_membres.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
