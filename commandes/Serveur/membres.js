@@ -83,7 +83,7 @@ module.exports.run = (client, message, args) => {
 			case 'dnd':	
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[0][3] = tableauCompteurs[0][3] + 1;
+					tableauCompteurs[0][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
@@ -95,7 +95,7 @@ module.exports.run = (client, message, args) => {
 			case 'idle': 
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[1][3] = tableauCompteurs[1][3] + 1;
+					tableauCompteurs[1][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
@@ -108,19 +108,19 @@ module.exports.run = (client, message, args) => {
 			case 'offline':	
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[2][3] = tableauCompteurs[2][3] + 1;
+					tableauCompteurs[2][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
 					/* On ne peut pas savoir quel est l'appareil utilisé puisque l'utilisateur n'est pas là, le compteur total sera alors tableauCompteurs[2][0] */
-					tableauCompteurs[2][0] = tableauCompteurs[2][0] + 1;
+					tableauCompteurs[2][0] += 1;
 				}
 				break;
 
 			case 'online':
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[3][3] = tableauCompteurs[3][3] + 1;
+					tableauCompteurs[3][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
@@ -135,13 +135,13 @@ module.exports.run = (client, message, args) => {
 	let totalConnectes = tableauCompteurs[3][0] + tableauCompteurs[3][1] + tableauCompteurs[3][2] + tableauCompteurs[3][3];
 	let totalDeconnectes = tableauCompteurs[2][0];
  	let totalConcentres = tableauCompteurs[0][0] + tableauCompteurs[0][1] + tableauCompteurs[0][2] + tableauCompteurs[0][3];
-	let totalMembres = totalAbsents + totalConnectes + totalDeconnectes;
+	let totalMembres = totalAbsents + totalConnectes + totalDeconnectes + totalConcentres;
 
 	let messageRetour = `Il y a actuellement **${totalMembres} utilisateurs** présents sur ce serveur. \nIls sont répartis de la façon suivante : \n\n`;
 	messageRetour += `- **${totalConnectes} connecté(s)** dont : \n* **${tableauCompteurs[3][3]} bot(s) ;\n** * **${tableauCompteurs[3][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[3][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[3][2]} personne(s)** sur Discord launcher pc.\n\n`;
-	messageRetour += `- **${totalAbsents} absent(s)** dont : \n* **${tableauCompteurs[1][3]} bot(s) ;\n** * **${tableauCompteurs[3][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[1][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[1][2]} personne(s)** sur Discord launcher pc.\n\n`;
+	messageRetour += `- **${totalAbsents} absent(s)** dont : \n* **${tableauCompteurs[1][3]} bot(s) ;\n** \t* **${tableauCompteurs[3][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[1][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[1][2]} personne(s)** sur Discord launcher pc.\n\n`;
 	messageRetour += `- **${totalConcentres} concentré(s)** dont : \n* **${tableauCompteurs[0][3]} bot(s) ;\n** * **${tableauCompteurs[0][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[0][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[0][2]} personne(s)** sur Discord launcher pc.\n\n`;
-	messageRetour += `- **${totalDeconnectes} déconnecté(s)** dont : \n* **${tableauCompteurs[2][3]} bot(s) ;\n** * **${tableauCompteurs[2][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[2][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[2][2]} personne(s)** sur Discord launcher pc.\n\n`;
+	messageRetour += `- **${totalDeconnectes} déconnecté(s)** dont : \n* **${tableauCompteurs[2][3]} bot(s) ;\n** * **${tableauCompteurs[2][0]} personne(s)**.\n\n`;
 
 	const contenu = new MessageEmbed()
 			.setColor("#cb00ea")

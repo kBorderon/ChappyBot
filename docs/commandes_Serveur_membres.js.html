@@ -111,7 +111,7 @@ module.exports.run = (client, message, args) => {
 			case 'dnd':	
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[0][3] = tableauCompteurs[0][3] + 1;
+					tableauCompteurs[0][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
@@ -123,7 +123,7 @@ module.exports.run = (client, message, args) => {
 			case 'idle': 
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[1][3] = tableauCompteurs[1][3] + 1;
+					tableauCompteurs[1][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
@@ -136,19 +136,19 @@ module.exports.run = (client, message, args) => {
 			case 'offline':	
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[2][3] = tableauCompteurs[2][3] + 1;
+					tableauCompteurs[2][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
 					/* On ne peut pas savoir quel est l'appareil utilisé puisque l'utilisateur n'est pas là, le compteur total sera alors tableauCompteurs[2][0] */
-					tableauCompteurs[2][0] = tableauCompteurs[2][0] + 1;
+					tableauCompteurs[2][0] += 1;
 				}
 				break;
 
 			case 'online':
 				/* Si l'utilisateur est un bot, on incrémente son compteur */
 				if(estUnBot){
-					tableauCompteurs[3][3] = tableauCompteurs[3][3] + 1;
+					tableauCompteurs[3][3] += 1;
 		
 				/* Si l'utilisateur n'est pas un bot, on incrémente son compteur */
 				} else {
@@ -163,13 +163,13 @@ module.exports.run = (client, message, args) => {
 	let totalConnectes = tableauCompteurs[3][0] + tableauCompteurs[3][1] + tableauCompteurs[3][2] + tableauCompteurs[3][3];
 	let totalDeconnectes = tableauCompteurs[2][0];
  	let totalConcentres = tableauCompteurs[0][0] + tableauCompteurs[0][1] + tableauCompteurs[0][2] + tableauCompteurs[0][3];
-	let totalMembres = totalAbsents + totalConnectes + totalDeconnectes;
+	let totalMembres = totalAbsents + totalConnectes + totalDeconnectes + totalConcentres;
 
 	let messageRetour = `Il y a actuellement **${totalMembres} utilisateurs** présents sur ce serveur. \nIls sont répartis de la façon suivante : \n\n`;
 	messageRetour += `- **${totalConnectes} connecté(s)** dont : \n* **${tableauCompteurs[3][3]} bot(s) ;\n** * **${tableauCompteurs[3][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[3][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[3][2]} personne(s)** sur Discord launcher pc.\n\n`;
-	messageRetour += `- **${totalAbsents} absent(s)** dont : \n* **${tableauCompteurs[1][3]} bot(s) ;\n** * **${tableauCompteurs[3][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[1][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[1][2]} personne(s)** sur Discord launcher pc.\n\n`;
+	messageRetour += `- **${totalAbsents} absent(s)** dont : \n* **${tableauCompteurs[1][3]} bot(s) ;\n** \t* **${tableauCompteurs[3][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[1][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[1][2]} personne(s)** sur Discord launcher pc.\n\n`;
 	messageRetour += `- **${totalConcentres} concentré(s)** dont : \n* **${tableauCompteurs[0][3]} bot(s) ;\n** * **${tableauCompteurs[0][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[0][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[0][2]} personne(s)** sur Discord launcher pc.\n\n`;
-	messageRetour += `- **${totalDeconnectes} déconnecté(s)** dont : \n* **${tableauCompteurs[2][3]} bot(s) ;\n** * **${tableauCompteurs[2][0]} personne(s)** sur Discord navigateur ;\n* **${tableauCompteurs[2][1]} personne(s)** sur Discord mobile ;\n* **${tableauCompteurs[2][2]} personne(s)** sur Discord launcher pc.\n\n`;
+	messageRetour += `- **${totalDeconnectes} déconnecté(s)** dont : \n* **${tableauCompteurs[2][3]} bot(s) ;\n** * **${tableauCompteurs[2][0]} personne(s)**.\n\n`;
 
 	const contenu = new MessageEmbed()
 			.setColor("#cb00ea")
@@ -213,13 +213,13 @@ module.exports.help = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun May 17 2020 22:16:07 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon May 18 2020 20:58:40 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
