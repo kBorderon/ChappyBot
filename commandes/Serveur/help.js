@@ -1,4 +1,3 @@
-const { MessageEmbed } = require('discord.js');
 const { PREFIX } = require('../../configuration/config.js');
 const { readdirSync } = require('fs');
 const listeCategories = readdirSync('./commandes');
@@ -26,7 +25,7 @@ module.exports.run = async (client, message, args) => {
 
 		let messageAide = `= Liste des commandes disponibles `;
 
-		/* Si la commande help est utilisée dans un message privé avec le bot, on ignore le nom du serveur puisqu'il y en a pas */
+		/* On ajoute le nom du serveur discord, si la commande help est utilisée dans ce serveur */
 		if(message.channel.guild !== undefined) {
 			messageAide += `sur le serveur ${message.channel.guild.name} `;
 		}
@@ -118,7 +117,7 @@ module.exports.help = {
 	aliases:['help', 'h'],
 	args: false,
 	categorie: 'Serveur',
-	cooldown: 3,
+	cooldown: 30,
 	description: 'Renvoie l\'utilisation d\'une ou des commandes présentes en message privé.',
 	nom: 'help',
 	utilisation: 'aucun argument ou <nom_commande>'

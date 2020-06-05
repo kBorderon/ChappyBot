@@ -44,6 +44,15 @@
 
     <section>
         <article><h1>bot-discord</h1>
+<p><a href="https://github.com/kBorderon/bot-discord/issues"><img src="https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg" alt="Demandez moi n'importe quoi !"></a>
+<a href="https://github.com/kBorderon/bot-discord/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kBorderon/bot-discord.svg?label=licence" alt="GitHub license"></a>	
+<a href="https://heroku.com"><img src="https://img.shields.io/badge/D%C3%A9ploiement%20sur%20-Heroku-997fbc.svg?logo=Heroku" alt="Heroku"></a>
+<a href="https://discord.com/invite/u6pGvbG"><img src="https://img.shields.io/discord/711298566425018440.svg?label=Discord&amp;logo=Discord&amp;colorB=7289da" alt="Discord"></a>
+<a href="https://twitter.com/intent/tweet?text=@Kevin_Borderon%20Projet%20bot-discord:&amp;url=https://github.com/kBorderon/bot-discord"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%25FkBorderon%2Fbot-discord" alt="Tweet"></a>
+<a href="https://www.codacy.com/manual/kBorderon/bot-discord?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/bot-discord&amp;utm_campaign=Badge_Grade"><img src="http://img.shields.io/codacy/grade/d00ca5344fa14239a31023e64b447113?label=Qualit%C3%A9%20du%20code" alt="Codacy Badge"></a>
+<a href="https://github.com/discordjs"><img src="https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm" alt="discord.js"></a>
+<a href="https://github.com/kBorderon/bot-discord/issues"><img src="https://img.shields.io/github/issues/kBorderon/bot-discord.svg" alt="GitHub issues"></a>
+<a href="https://github.com/kBorderon/bot-discord/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/kBorderon/bot-discord.svg" alt="GitHub issues-closed"></a></p>
 <h2>Partie 1 - Présentation</h2>
 <p>Ce projet consiste en la réalisation d'un bot Discord. Ce dernier devra réaliser différentes interactions (commandes), nous utiliserons différentes API afin d'améliorer ses capacités de fonctionnement.
 Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis n'importe quelle autre plateforme (Windows, Mac, Linux, autre carte de développement).
@@ -150,7 +159,108 @@ Vous pouvez également trouver d'autres tutoriels en Français ou dans une autre
 Tant que votre terminal sera ouvert avec la commande précédente saisie, le bot fonctionnera, nous vous indiquerons plus tard comment lancer en arrière-plan le bot.</p>
 <h2>Partie 6 - Utilisation du bot</h2>
 <p>Pour utiliser correctement le bot, vous devez écrire dans un channel de votre discord <strong>?nom_commande &lt;argument_1&gt; &lt;argument_2&gt; (etc. d'autre arguments si nécessaires)</strong>. La première commande que je vous invite à tester est la commande <strong>?help</strong>. Cette commande vous indiquera l'ensemble des commandes disponibles sur votre serveur Discord.<br>
-Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &lt;nom_commande&gt;</strong>, par exemple <strong>?help ping</strong> vous décrira le fonctionnement de <strong>?ping</strong>.</p></article>
+Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &lt;nom_commande&gt;</strong>, par exemple <strong>?help ping</strong> vous décrira le fonctionnement de <strong>?ping</strong>.</p>
+<p>Liste des commandes actuelles :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Nom de la commande</th>
+<th style="text-align:left">Statut du développement</th>
+<th style="text-align:left">Catégorie</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">feed</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Même</td>
+<td style="text-align:left">Renvoie l'image d'un collaborateur ayant feed</td>
+</tr>
+<tr>
+<td style="text-align:left">rage</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Même</td>
+<td style="text-align:left">Renvoie l'image de l'utilisateur rageant</td>
+</tr>
+<tr>
+<td style="text-align:left">sel</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Même</td>
+<td style="text-align:left">Renvoie l'image de l'utilisateur salant</td>
+</tr>
+<tr>
+<td style="text-align:left">help</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Serveur</td>
+<td style="text-align:left">Renvoie l'utilisation d'une ou des commandes présentes en message privé</td>
+</tr>
+<tr>
+<td style="text-align:left">membres</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Serveur</td>
+<td style="text-align:left">Renvoie les informations concernant les membres présents sur ce serveur</td>
+</tr>
+<tr>
+<td style="text-align:left">ping</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Serveur</td>
+<td style="text-align:left">Renvoie la latence du bot</td>
+</tr>
+<tr>
+<td style="text-align:left">roles</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Serveur</td>
+<td style="text-align:left">Renvoie les rôles disponibles sur ce serveur</td>
+</tr>
+<tr>
+<td style="text-align:left">blague</td>
+<td style="text-align:left">en cours</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Renvoie une blague aléatoirement</td>
+</tr>
+<tr>
+<td style="text-align:left">debat</td>
+<td style="text-align:left">en cours</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Création d'un débat et de son enregistrement audio</td>
+</tr>
+<tr>
+<td style="text-align:left">meteo</td>
+<td style="text-align:left">en cours</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Renvoie la météo pour une ville précise</td>
+</tr>
+<tr>
+<td style="text-align:left">projet</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Renvoie le lien du projet GitHub bot-discord</td>
+</tr>
+<tr>
+<td style="text-align:left">statutDebat</td>
+<td style="text-align:left">en cours</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Renvoie le statut du débat actuel</td>
+</tr>
+<tr>
+<td style="text-align:left">stopDebat</td>
+<td style="text-align:left">en cours</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Arrête le débat en cours et de son enregistrement audio</td>
+</tr>
+</tbody>
+</table>
+<p>D'autres commandes viendront s'ajouter au fur et à mesure.</p>
+<h2>Partie 7 - Questions et demandes</h2>
+<blockquote>
+<p>Si vous avez des questions ou des demandes d'ajout sur le bot, n'hésitez pas à me contacter grâce à :</p>
+<ul>
+<li>mon mail (Cf. mon <a href="https://github.com/kBorderon" title="lien vers mon profil Github"><strong>profil GitHub</strong></a>) ;</li>
+<li>mon compte Twitter : <a href="https://twitter.com/Kevin_Borderon" title="Lien vers mon profil Twitter"><strong>@Kevin_Borderon</strong></a> ;</li>
+<li>mes issues associées au projet <a href="https://github.com/kBorderon/bot-discord/issues" title="Lien vers les issuers du dépôt GitHub"><strong>bot discord</strong></a>.</li>
+</ul>
+</blockquote></article>
     </section>
 
 
@@ -167,7 +277,7 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon May 18 2020 20:58:40 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 05 2020 23:56:03 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

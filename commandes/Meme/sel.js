@@ -12,7 +12,7 @@ const image = new MessageAttachment('./contenu/sel.png')
  */
 module.exports.run = (client, message, args) => {
 	/* On récupère la première mention d'un utilisateur dans les arguments args, si aucune mention utilisateur n'est présente, on return null */
-	const mentionUtilisateur = message.mentions.users.first() || null;  //message.mentions.users.first() || null;
+	const mentionUtilisateur = message.mentions.users.first() || null; 
 
 	/* Si mentionUtilisateur != null */
 		if(mentionUtilisateur) {
