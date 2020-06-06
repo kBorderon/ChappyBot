@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: commandes/Serveur/roles.js</title>
+    <title>JSDoc: Source: commandes/Utilitaire/blague.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: commandes/Serveur/roles.js</h1>
+    <h1 class="page-title">Source: commandes/Utilitaire/blague.js</h1>
 
     
 
@@ -26,60 +26,104 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { PREFIX } = require('../../configuration/config.js');
+            <pre class="prettyprint source linenums"><code>const { MessageEmbed } = require('discord.js');
+const fetch = require('node-fetch');
+const { PREFIX, TOKEN_BLAGUE_API } = require('../../configuration/config.js');
 
 /**
- * Run de la commande rôles
+ * Run de la commande blague
  * @author Kévin Borderon	
- * @module roles/run
+ * @module blague/run
  * @param {Client} client - Référence au bot
  * @param {Message} message - Le message reçu par le bot
  * @param {Array.&lt;String>} categorie - Les arguments du message
  */
 module.exports.run = (client, message, args) => {
-	const nomServeur = message.channel.guild.name;
+	/* Liste actuelle des types de blagues présentes au sein de l'API */
+	const typesBlagues = ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit'];
 
-	/* Récupère les rôles présents sur le serveur Discord où la commande ?roles est utilisée */
-	const listeRoles = Array.from(message.channel.guild.roles.cache.values());
-	const tailleListeRoles = listeRoles.length;
-	let messageRetour = `Le serveur ${nomServeur} dispose des rôles suivants :\n`;
+	/* Notre objet stockant la blague */
+	var blague = '';
 
-	for(let index = 0; index &lt; tailleListeRoles; index++){
-		
-		/* Sur le message du dernier rôle on place un . sinon ; */
-		if(index == tailleListeRoles - 1){
-			messageRetour += `\t- ${listeRoles[index].name}.`;
-		} else {
-			messageRetour += `\t- ${listeRoles[index].name} ;\n`;
-		}
+	/* Notre objet stockant le type de blague souhaité */
+	var theme = '';
+
+	/* On vérifie qu'un paramètre est passé */
+	if(args.length > 0){
+
+		/* Si le thème passé en paramètre appartient aux thèmes présents, nous utiliserons ce thème*/
+		var theme = typesBlagues.includes(args[0].toLowerCase())? args[0].toLowerCase() : 'default';
 	}
 
-	/* On envoie le message préparé, avec pour caractéristique l'utilisation de caractères Ascii */
-	message.channel.send(messageRetour, {
-		code: 'asciidoc'}
-	);
+	/* Si le thème passé en paramètre ou non, n'est pas reconnu, on lance une blague random*/
+	if(theme === 'default'){
+		fetch('https://www.blagues-api.fr/api/random', {
+			headers: {
+				'Authorization': `Bearer ${TOKEN_BLAGUE_API}`
+			}
+		}).then(reponse => reponse.json())
+			.then(donnees => {
+				/* Récupération de la blague depuis l'API */
+				blague += `${donnees.joke}\n**Réponse :** ${donnees.answer}`;
+				/* Récupération du thème de la blague */
+				theme = `${donnees.type}`;
+
+				let contenu = new MessageEmbed()
+				.setColor("#d17dc1")
+				.setTitle("Blague sur demande")
+				.setURL("https://blagues-api.fr")
+				.setTimestamp()
+				.setDescription(`**Thème blague :** ${theme.toLowerCase()}.\n**Blague :** ${blague}.`)
+				.setFooter("Blague aléatoire !");
+
+				/* On envoie le message préparé */
+				message.channel.send(contenu);
+		});
+	/* Thème reconnu, on lance la blague */
+	} else {
+		fetch(`https://www.blagues-api.fr/api/type/${theme}/random`, {
+			headers: {
+				'Authorization': `Bearer ${TOKEN_BLAGUE_API}`
+			}
+		}).then(reponse => reponse.json())
+			.then(donnees => {
+				/* Récupération de la blague depuis l'API */
+				blague += `${donnees.joke}\n**Réponse :** ${donnees.answer}`;
+
+				let contenu = new MessageEmbed()
+				.setColor("#d17dc1")
+				.setTitle("Blague sur demande")
+				.setURL("https://blagues-api.fr")
+				.setTimestamp()
+				.setDescription(`**Thème blague :** ${theme.toLowerCase()}.\n**Blague :** ${blague}.`)
+				.setFooter("Blague aléatoire !");
+
+				/* On envoie le message préparé */
+				message.channel.send(contenu);
+		});
+	}			
 };
 
 /**
- * Help de la commande rôles
+ * Help de la commande blague
  * @author Kévin Borderon	
- * @module roles/help
- * @param {Array.&lt;Roles>} ['roles'] - Indique les aliases de la commande rôles
+ * @module blague/help
+ * @param {Array.&lt;Blague>} ['blague', 'joke'] - Indique les aliases de la commande blague
  * @param {boolean} args - Indique la présence OBLIGATOIRE d'arguments, ici ils ne sont pas obligatoires donc false
- * @param {string} categorie - Indique la catégorie de la commande rôles
- * @param {number} cooldown - Indique le cooldown de la commande rôles avant sa prochaine utilisation de la part du même utilisateur
- * @param {string} description - Indique la description de la commande rôles
- * @param {string} nom - Indique le nom de la commande rôles
- * @param {string} utilisation - Indique l'utilisation de la commande rôles
+ * @param {string} categorie - Indique la catégorie de la commande blague
+ * @param {number} cooldown - Indique le cooldown de la commande blague avant sa prochaine utilisation de la part du même utilisateur
+ * @param {string} description - Indique la description de la commande blague
+ * @param {string} nom - Indique le nom de la commande blague
+ * @param {string} utilisation - Indique l'utilisation de la commande blague
  */
 module.exports.help = {
-	aliases:['roles'],
+	aliases:['blague', 'joke'],	
 	args: false,
-	categorie: 'Serveur',
+	categorie: 'Utilitaire',
 	cooldown: 10,
-	description: 'Renvoie les rôles disponibles sur ce serveur.',
-	nom: 'roles',
-	utilisation: 'aucun argument'
+	description: 'Renvoie une blague aléatoirement',
+	nom: 'blague',
+	utilisation: 'aucun argument ou '
 };
 </code></pre>
         </article>
