@@ -16,9 +16,9 @@ Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis 
 Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube [**getCodingKnowledge**](https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA "lien vers la chaîne Youtube de getCodingKnowledge").  
 
 > #Nouveautés : 
-- Déploiement du bot sur la plateforme Heroku ; 
-- Serveur Discord de test pour un accès au public [**Tests Bot Discord**](https://discord.com/invite/u6pGvbG "Invitation pour rejoindre le serveur discord") ;
-- Utilisation de [**Blagues API**](https://www.blagues-api.fr/, "API utilisée pour la commande blague") pour notre nouvelle commande.
+> - Déploiement du bot sur la plateforme Heroku ; 
+> - Serveur Discord de test pour un accès au public [**Tests Bot Discord**](https://discord.com/invite/u6pGvbG "Invitation pour rejoindre le serveur discord") ;
+> - Utilisation de [**Blagues API**](https://www.blagues-api.fr/, "API utilisée pour la commande blague") pour notre nouvelle commande.
 
 
 > Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-joint (**[lien](https://discord.gg/u6pGvbG)**). Le bot y est déployé grâce à la plateforme **[Heroku](https://www.heroku.com/)**. **Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.**
