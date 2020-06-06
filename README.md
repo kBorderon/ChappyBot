@@ -15,7 +15,12 @@ Ce projet consiste en la réalisation d'un bot Discord. Ce dernier devra réalis
 Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis n'importe quelle autre plateforme (Windows, Mac, Linux, autre carte de développement). 
 Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube [**getCodingKnowledge**](https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA "lien vers la chaîne Youtube de getCodingKnowledge").  
 
-> #Nouveauté : Déploiement du bot sur la plateforme Heroku.  
+> #Nouveautés : 
+- Déploiement du bot sur la plateforme Heroku ; 
+- Serveur Discord de test pour un accès au public [**Tests Bot Discord**](https://discord.com/invite/u6pGvbG "Invitation pour rejoindre le serveur discord") ;
+- Utilisation de [**Blagues API**](https://www.blagues-api.fr/, "API utilisée pour la commande blague") pour notre nouvelle commande.
+
+
 > Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-joint (**[lien](https://discord.gg/u6pGvbG)**). Le bot y est déployé grâce à la plateforme **[Heroku](https://www.heroku.com/)**. **Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.**
 
 ### Auteur 
@@ -77,7 +82,7 @@ Si vous souhaitez plus de détails, n'hésitez pas à regarder directement les f
 Comme je le disais plus haut, ce bot sera présent sur un Raspberry Pi. Pour pouvoir créer et customiser votre propre bot personnel, je vous invite à consulter la première partie ce tutoriel en Anglais [Creating a Bot Account](https://discordpy.readthedocs.io/en/latest/discord.html "lien du tutoriel Anglais"), celle qui présente la création du Bot sur la plateforme Discord dédiée aux développeurs.  
 Vous pouvez également trouver d'autres tutoriels en Français ou dans une autre langue concernant la création d'un bot.  
 
-Une fois votre bot créé, customisé (nom, image etc.), vous **devez modifier le fichier config.js avant l'utilisation du bot, remplacez <votre_token> par le token de votre bot** présent sur la plateforme où vous avez créé une application et un bot. Le token se situe à l'emplacement suivant : onglet Bot, Build-A-Bot et Token, copiez le token présent dans notre fichier.  
+Une fois votre bot créé, customisé (nom, image etc.), vous **devez modifier le fichier config.js avant l'utilisation du bot, remplacez <votre_token> par le token de votre bot** présent sur la plateforme où vous avez créé une application et un bot. Le token se situe à l'emplacement suivant : onglet Bot, Build-A-Bot et Token, copiez le token présent dans notre fichier. D'autres tokens liés aux APIs, devront être ajoutés afin de pouvoir utiliser le bot à 100%, veuillez suivre les indications à côté des tokens en question.   
 
 Votre bot est dorénavant lié à ce projet, il utilisera ce qui y sera développé (faites des gits pull régulièrement) en plus de ce que vous développerez. Pour ajouter votre bot à un serveur Discord, je vous invite à consulter le tutoriel précédent.
 
@@ -102,7 +107,7 @@ Liste des commandes actuelles :
 |	membres							|	terminé											|	Serveur			| Renvoie les informations concernant les membres présents sur ce serveur 			|	
 |	ping								| terminé											| Serveur			| Renvoie la latence du bot																											|
 |	roles								| terminé											| Serveur			| Renvoie les rôles disponibles sur ce serveur																	|
-|	blague							| en cours										|	Utilitaire	| Renvoie une blague aléatoirement																							|
+|	blague							| terminé											|	Utilitaire	| Renvoie une blague aléatoirement																							|
 |	debat								| en cours										|	Utilitaire	|	Création d'un débat et de son enregistrement audio														|
 | meteo								| en cours 										| Utilitaire	| Renvoie la météo pour une ville précise																				|
 |	projet							|	terminé											|	Utilitaire	| Renvoie le lien du projet GitHub bot-discord																	|

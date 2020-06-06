@@ -58,8 +58,15 @@
 Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis n'importe quelle autre plateforme (Windows, Mac, Linux, autre carte de développement).
 Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube <a href="https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA" title="lien vers la chaîne Youtube de getCodingKnowledge"><strong>getCodingKnowledge</strong></a>.</p>
 <blockquote>
-<p>#Nouveauté : Déploiement du bot sur la plateforme Heroku.<br>
-Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-joint (<strong><a href="https://discord.gg/u6pGvbG">lien</a></strong>). Le bot y est déployé grâce à la plateforme <strong><a href="https://www.heroku.com/">Heroku</a></strong>. <strong>Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.</strong></p>
+<p>#Nouveautés :</p>
+</blockquote>
+<ul>
+<li>Déploiement du bot sur la plateforme Heroku ;</li>
+<li>Serveur Discord de test pour un accès au public <a href="https://discord.com/invite/u6pGvbG" title="Invitation pour rejoindre le serveur discord"><strong>Tests Bot Discord</strong></a> ;</li>
+<li>Utilisation de <a href="https://www.blagues-api.fr/," title="API utilisée pour la commande blague"><strong>Blagues API</strong></a> pour notre nouvelle commande.</li>
+</ul>
+<blockquote>
+<p>Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-joint (<strong><a href="https://discord.gg/u6pGvbG">lien</a></strong>). Le bot y est déployé grâce à la plateforme <strong><a href="https://www.heroku.com/">Heroku</a></strong>. <strong>Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.</strong></p>
 </blockquote>
 <h3>Auteur</h3>
 <p><strong>Borderon Kévin</strong></p>
@@ -152,7 +159,7 @@ Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, 
 <h2>Partie 4 - Configuration du Bot</h2>
 <p>Comme je le disais plus haut, ce bot sera présent sur un Raspberry Pi. Pour pouvoir créer et customiser votre propre bot personnel, je vous invite à consulter la première partie ce tutoriel en Anglais <a href="https://discordpy.readthedocs.io/en/latest/discord.html" title="lien du tutoriel Anglais">Creating a Bot Account</a>, celle qui présente la création du Bot sur la plateforme Discord dédiée aux développeurs.<br>
 Vous pouvez également trouver d'autres tutoriels en Français ou dans une autre langue concernant la création d'un bot.</p>
-<p>Une fois votre bot créé, customisé (nom, image etc.), vous <strong>devez modifier le fichier config.js avant l'utilisation du bot, remplacez &lt;votre_token&gt; par le token de votre bot</strong> présent sur la plateforme où vous avez créé une application et un bot. Le token se situe à l'emplacement suivant : onglet Bot, Build-A-Bot et Token, copiez le token présent dans notre fichier.</p>
+<p>Une fois votre bot créé, customisé (nom, image etc.), vous <strong>devez modifier le fichier config.js avant l'utilisation du bot, remplacez &lt;votre_token&gt; par le token de votre bot</strong> présent sur la plateforme où vous avez créé une application et un bot. Le token se situe à l'emplacement suivant : onglet Bot, Build-A-Bot et Token, copiez le token présent dans notre fichier. D'autres tokens liés aux APIs, devront être ajoutés afin de pouvoir utiliser le bot à 100%, veuillez suivre les indications à côté des tokens en question.</p>
 <p>Votre bot est dorénavant lié à ce projet, il utilisera ce qui y sera développé (faites des gits pull régulièrement) en plus de ce que vous développerez. Pour ajouter votre bot à un serveur Discord, je vous invite à consulter le tutoriel précédent.</p>
 <h2>Partie 5 - Activation du bot</h2>
 <p>Pour activer le bot, <strong>placez-vous dans le dossier bot-discord, puis exécutez la commande : node bot.js</strong>, vous devriez voir les commandes chargées, ainsi que le message connexion du bot ...<br>
@@ -215,7 +222,7 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </tr>
 <tr>
 <td style="text-align:left">blague</td>
-<td style="text-align:left">en cours</td>
+<td style="text-align:left">terminé</td>
 <td style="text-align:left">Utilitaire</td>
 <td style="text-align:left">Renvoie une blague aléatoirement</td>
 </tr>
@@ -271,13 +278,13 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blague_help.html">blague/help</a></li><li><a href="module-blague_run.html">blague/run</a></li><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 05 2020 23:56:03 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 07 2020 00:05:15 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
