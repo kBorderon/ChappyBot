@@ -28,7 +28,7 @@ module.exports.run = (client, message, args) => {
 	}
 
 	/* Si le thème passé en paramètre ou non, n'est pas reconnu, on lance une blague random*/
-	if(theme === 'default'){
+	if(args.length == 0 || theme === 'default'){
 		fetch('https://www.blagues-api.fr/api/random', {
 			headers: {
 				'Authorization': `Bearer ${TOKEN_BLAGUE_API}`
