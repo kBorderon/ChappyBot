@@ -40,12 +40,15 @@ module.exports.run = (client, message, args) => {
 				/* Récupération du thème de la blague */
 				theme = `${donnees.type}`;
 
+				let description = `**Thème blague :** ${theme.toLowerCase()}.\n**Blague :** ${blague}.\n`;
+				description += `<@${message.author.id}>, le type de blague n'a pas été reconnu, veuillez utiliser un type en respectant la consigne suivante : ${this.help.utilisation}`;
+
 				let contenu = new MessageEmbed()
 				.setColor("#d17dc1")
 				.setTitle("Blague sur demande")
 				.setURL("https://blagues-api.fr")
 				.setTimestamp()
-				.setDescription(`**Thème blague :** ${theme.toLowerCase()}.\n**Blague :** ${blague}.`)
+				.setDescription(description)
 				.setFooter("Blague aléatoire !");
 
 				/* On envoie le message préparé */
@@ -95,5 +98,5 @@ module.exports.help = {
 	cooldown: 10,
 	description: 'Renvoie une blague aléatoirement',
 	nom: 'blague',
-	utilisation: 'aucun argument ou '
+	utilisation: "aucun argument ou <type_blague> parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']"
 };
