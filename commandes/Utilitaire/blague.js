@@ -20,11 +20,21 @@ module.exports.run = (client, message, args) => {
 	/* Notre objet stockant le type de blague souhaité */
 	var theme = '';
 
+	/* Contenu du message que nous envoyons */
+	var description = '';
+
+	/* Description temporaire si le thème n'est pas reconnu */
+	var descriptionTmp = '';
+
 	/* On vérifie qu'un paramètre est passé */
 	if(args.length > 0){
 
 		/* Si le thème passé en paramètre appartient aux thèmes présents, nous utiliserons ce thème*/
 		var theme = typesBlagues.includes(args[0].toLowerCase())? args[0].toLowerCase() : 'default';
+
+		if(theme === 'default'){
+			 descriptionTmp += `<@${message.author.id}>, le type de blague n'a pas été reconnu, veuillez utiliser un type en respectant la consigne suivante : ${this.help.utilisation}`;
+		}
 	}
 
 	/* Si le thème passé en paramètre ou non, n'est pas reconnu, on lance une blague random*/
@@ -40,8 +50,8 @@ module.exports.run = (client, message, args) => {
 				/* Récupération du thème de la blague */
 				theme = `${donnees.type}`;
 
-				let description = `**Thème blague :** ${theme.toLowerCase()}.\n**Blague :** ${blague}.\n`;
-				description += `<@${message.author.id}>, le type de blague n'a pas été reconnu, veuillez utiliser un type en respectant la consigne suivante : ${this.help.utilisation}`;
+				description += `**Thème blague :** ${theme.toLowerCase()}.\n**Blague :** ${blague}.\n`;
+				description += descriptionTmp;
 
 				let contenu = new MessageEmbed()
 				.setColor("#d17dc1")
