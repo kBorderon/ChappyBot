@@ -43,7 +43,10 @@
 
 
     <section>
-        <article><h1>bot-discord</h1>
+        <article><h1>ChappyBot</h1>
+<div align="center">
+	<img  width="300" alt="Logo ChappyBot" src="https://i.goopics.net/Zo7db.png"><br>
+</div>
 <p><a href="https://github.com/kBorderon/bot-discord/issues"><img src="https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg" alt="Demandez moi n'importe quoi !"></a>
 <a href="https://github.com/kBorderon/bot-discord/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kBorderon/bot-discord.svg?label=licence" alt="GitHub license"></a>	
 <a href="https://heroku.com"><img src="https://img.shields.io/badge/D%C3%A9ploiement%20sur%20-Heroku-997fbc.svg?logo=Heroku" alt="Heroku"></a>
@@ -53,8 +56,18 @@
 <a href="https://github.com/discordjs"><img src="https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm" alt="discord.js"></a>
 <a href="https://github.com/kBorderon/bot-discord/issues"><img src="https://img.shields.io/github/issues/kBorderon/bot-discord.svg" alt="GitHub issues"></a>
 <a href="https://github.com/kBorderon/bot-discord/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/kBorderon/bot-discord.svg" alt="GitHub issues-closed"></a></p>
-<h2>Partie 1 - Présentation</h2>
-<p>Ce projet consiste en la réalisation d'un bot Discord. Ce dernier devra réaliser différentes interactions (commandes), nous utiliserons différentes API afin d'améliorer ses capacités de fonctionnement.
+<h2>Sommaire</h2>
+<ol>
+<li><a href="#presentation">Présentation</a></li>
+<li><a href="#prerequis">Prérequis</a></li>
+<li><a href="#installation">Installation du bot</a></li>
+<li><a href="#configuration">Configuration du bot</a></li>
+<li><a href="#activation">Activation du bot</a></li>
+<li><a href="#utilisation">Utilisation du bot</a></li>
+<li><a href="#questions">Questions et demandes</a></li>
+</ol>
+<h2>Partie 1 - Présentation <a name="presentation"></a></h2>
+<p>Ce projet consiste en la réalisation d'un bot Discord, appelé ChappyBot. Ce dernier devra réaliser différentes interactions (commandes), nous utiliserons différentes API afin d'améliorer ses capacités de fonctionnement.
 Ce bot sera exécuté depuis un Raspberry Pi, mais vous pouvez le lancer depuis n'importe quelle autre plateforme (Windows, Mac, Linux, autre carte de développement).
 Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels de création de bot de la chaîne Youtube <a href="https://www.youtube.com/channel/UCUjo_IKa9Cqkx_x-rMly8MA" title="lien vers la chaîne Youtube de getCodingKnowledge"><strong>getCodingKnowledge</strong></a>.</p>
 <blockquote>
@@ -62,19 +75,20 @@ Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels 
 <ul>
 <li>Déploiement du bot sur la plateforme Heroku ;</li>
 <li>Serveur Discord de test pour un accès au public <a href="https://discord.com/invite/u6pGvbG" title="Invitation pour rejoindre le serveur discord"><strong>Tests Bot Discord</strong></a> ;</li>
-<li>Utilisation de <a href="https://www.blagues-api.fr/," title="API utilisée pour la commande blague"><strong>Blagues API</strong></a> pour notre nouvelle commande.</li>
+<li>Utilisation de <a href="https://www.blagues-api.fr/" title="API utilisée pour la commande blague"><strong>Blagues API</strong></a> pour notre nouvelle commande.</li>
 </ul>
 </blockquote>
 <blockquote>
-<p>Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-joint (<strong><a href="https://discord.gg/u6pGvbG">lien</a></strong>). Le bot y est déployé grâce à la plateforme <strong><a href="https://www.heroku.com/">Heroku</a></strong>. <strong>Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.</strong></p>
+<p>Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-dessous. Le bot y est déployé grâce à la plateforme <strong><a href="https://www.heroku.com/">Heroku</a></strong>. <strong>Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.</strong></p>
 </blockquote>
+<p><a href="https://discord.com/invite/u6pGvbG"><img src="https://discord.com/api/guilds/711298566425018440/embed.png?style=banner3" alt="Discord API"></a></p>
 <h3>Auteur</h3>
 <p><strong>Borderon Kévin</strong></p>
-<h2>Partie 2 - Prérequis</h2>
+<h2>Partie 2 - Prérequis <a name="prerequis"></a></h2>
 <p>Vous devez au préalable, avoir installé sur votre machine Git et Node.js.<br>
 Pour savoir si vous possédez git, tapez la commande dans un terminal : <strong>git --version</strong> (vous devriez voir apparaître la version de git sinon une erreur).<br>
 Pour savoir si vous possédez nodejs, tapez la commande <strong>node --version</strong> (vous devriez voir apparaître la version de node sinon une erreur) et pour npm : <strong>npm --version</strong> (pareil, obtention de sa version ou erreur).</p>
-<h2>Partie 3 - Installation du bot</h2>
+<h2>Partie 3 - Installation du bot <a name="installation"></a></h2>
 <p>Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (<strong>git checkout &lt;nom_branche&gt;</strong>), déplacez-vous sur cette branche (<strong>git checkout &lt;nom_branche&gt;</strong>) puis récupérez le contenu présent sur le dépôt git (<strong>git pull</strong>).</p>
 <blockquote>
 <p>Pour récupérer le contenu du bot discord, veuillez vous déplacer sur une autre branche que la master, celle-ci ne présente que le projet.<br>
@@ -156,15 +170,15 @@ Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, 
 </tbody>
 </table>
 <p>Si vous souhaitez plus de détails, n'hésitez pas à regarder directement les fichiers ou à me contacter.</p>
-<h2>Partie 4 - Configuration du Bot</h2>
+<h2>Partie 4 - Configuration du bot <a name="configuration"></a></h2>
 <p>Comme je le disais plus haut, ce bot sera présent sur un Raspberry Pi. Pour pouvoir créer et customiser votre propre bot personnel, je vous invite à consulter la première partie ce tutoriel en Anglais <a href="https://discordpy.readthedocs.io/en/latest/discord.html" title="lien du tutoriel Anglais">Creating a Bot Account</a>, celle qui présente la création du Bot sur la plateforme Discord dédiée aux développeurs.<br>
 Vous pouvez également trouver d'autres tutoriels en Français ou dans une autre langue concernant la création d'un bot.</p>
 <p>Une fois votre bot créé, customisé (nom, image etc.), vous <strong>devez modifier le fichier config.js avant l'utilisation du bot, remplacez &lt;votre_token&gt; par le token de votre bot</strong> présent sur la plateforme où vous avez créé une application et un bot. Le token se situe à l'emplacement suivant : onglet Bot, Build-A-Bot et Token, copiez le token présent dans notre fichier. D'autres tokens liés aux APIs, devront être ajoutés afin de pouvoir utiliser le bot à 100%, veuillez suivre les indications à côté des tokens en question.</p>
 <p>Votre bot est dorénavant lié à ce projet, il utilisera ce qui y sera développé (faites des gits pull régulièrement) en plus de ce que vous développerez. Pour ajouter votre bot à un serveur Discord, je vous invite à consulter le tutoriel précédent.</p>
-<h2>Partie 5 - Activation du bot</h2>
+<h2>Partie 5 - Activation du bot <a name="activation"></a></h2>
 <p>Pour activer le bot, <strong>placez-vous dans le dossier bot-discord, puis exécutez la commande : node bot.js</strong>, vous devriez voir les commandes chargées, ainsi que le message connexion du bot ...<br>
 Tant que votre terminal sera ouvert avec la commande précédente saisie, le bot fonctionnera, nous vous indiquerons plus tard comment lancer en arrière-plan le bot.</p>
-<h2>Partie 6 - Utilisation du bot</h2>
+<h2>Partie 6 - Utilisation du bot <a name="utilisation"></a></h2>
 <p>Pour utiliser correctement le bot, vous devez écrire dans un channel de votre discord <strong>?nom_commande &lt;argument_1&gt; &lt;argument_2&gt; (etc. d'autre arguments si nécessaires)</strong>. La première commande que je vous invite à tester est la commande <strong>?help</strong>. Cette commande vous indiquera l'ensemble des commandes disponibles sur votre serveur Discord.<br>
 Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &lt;nom_commande&gt;</strong>, par exemple <strong>?help ping</strong> vous décrira le fonctionnement de <strong>?ping</strong>.</p>
 <p>Liste des commandes actuelles :</p>
@@ -259,7 +273,7 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </tbody>
 </table>
 <p>D'autres commandes viendront s'ajouter au fur et à mesure.</p>
-<h2>Partie 7 - Questions et demandes</h2>
+<h2>Partie 7 - Questions et demandes <a name="questions"></a></h2>
 <blockquote>
 <p>Si vous avez des questions ou des demandes d'ajout sur le bot, n'hésitez pas à me contacter grâce à :</p>
 <ul>
@@ -284,7 +298,7 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 07 2020 12:34:40 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 07 2020 19:11:00 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
