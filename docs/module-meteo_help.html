@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: feed/run</title>
+    <title>JSDoc: Module: meteo/help</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: feed/run</h1>
+    <h1 class="page-title">Module: meteo/help</h1>
 
     
 
@@ -38,7 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Run de la commande feed</p></div>
+            <div class="description"><p>Help de la commande meteo</p></div>
         
 
         
@@ -67,6 +67,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -79,46 +81,64 @@
 
         <tr>
             
-                <td class="name"><code>client</code></td>
+                <td class="name"><code>'meteo', 'weather'</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Client.html">Client</a></span>
+<span class="param-type">Array.&lt;Meteo></span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Référence au bot</p></td>
+            <td class="description last"><p>Indique les aliases de la commande meteo</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Message</span>
+<span class="param-type">boolean</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Le message reçu par le bot</p></td>
+            <td class="description last"><p>Indique la présence OBLIGATOIRE d'arguments, ici ils ne sont pas obligatoires donc false</p></td>
         </tr>
 
     
@@ -131,17 +151,149 @@
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;String></span>
+<span class="param-type">string</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Les arguments du message</p></td>
+            <td class="description last"><p>Indique la catégorie de la commande meteo</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cooldown</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Indique le cooldown de la commande meteo avant sa prochaine utilisation de la part du même utilisateur</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Indique la description de la commande meteo</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Indique le nom de la commande meteo</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>utilisation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Indique l'utilisation de la commande meteo</p></td>
         </tr>
 
     
@@ -189,7 +341,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="commandes_Meme_feed.js.html">commandes/Meme/feed.js</a>, <a href="commandes_Meme_feed.js.html#line5">line 5</a>
+        <a href="commandes_Utilitaire_meteo.js.html">commandes/Utilitaire/meteo.js</a>, <a href="commandes_Utilitaire_meteo.js.html#line221">line 221</a>
     </li></ul></dd>
     
 

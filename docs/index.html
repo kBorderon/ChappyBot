@@ -47,15 +47,15 @@
 <div align="center">
 	<img  width="300" alt="Logo ChappyBot" src="https://i.goopics.net/Zo7db.png"><br>
 </div>
-<p><a href="https://github.com/kBorderon/bot-discord/issues"><img src="https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg" alt="Demandez moi n'importe quoi !"></a>
-<a href="https://github.com/kBorderon/bot-discord/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kBorderon/bot-discord.svg?label=licence" alt="GitHub license"></a>	
+<p><a href="https://github.com/kBorderon/ChappyBot/issues"><img src="https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg" alt="Demandez moi n'importe quoi !"></a>
+<a href="https://github.com/kBorderon/ChappyBot/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kBorderon/ChappyBot.svg?label=licence" alt="GitHub license"></a>	
 <a href="https://heroku.com"><img src="https://img.shields.io/badge/D%C3%A9ploiement%20sur%20-Heroku-997fbc.svg?logo=Heroku" alt="Heroku"></a>
 <a href="https://discord.com/invite/u6pGvbG"><img src="https://img.shields.io/discord/711298566425018440.svg?label=Discord&amp;logo=Discord&amp;colorB=7289da" alt="Discord"></a>
-<a href="https://twitter.com/intent/tweet?text=@Kevin_Borderon%20Projet%20bot-discord:&amp;url=https://github.com/kBorderon/bot-discord"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%25FkBorderon%2Fbot-discord" alt="Tweet"></a>
-<a href="https://www.codacy.com/manual/kBorderon/bot-discord?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/bot-discord&amp;utm_campaign=Badge_Grade"><img src="http://img.shields.io/codacy/grade/d00ca5344fa14239a31023e64b447113?label=Qualit%C3%A9%20du%20code" alt="Codacy Badge"></a>
+<a href="https://twitter.com/intent/tweet?text=@Kevin_Borderon%20Projet%20ChappyBot:&amp;url=https://github.com/kBorderon/ChappyBot"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%25FkBorderon%2FChappyBot" alt="Tweet"></a>
+<a href="https://www.codacy.com/manual/kBorderon/ChappyBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/ChappyBot&amp;utm_campaign=Badge_Grade"><img src="http://img.shields.io/codacy/grade/d00ca5344fa14239a31023e64b447113?label=Qualit%C3%A9%20du%20code" alt="Codacy Badge"></a>
 <a href="https://github.com/discordjs"><img src="https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm" alt="discord.js"></a>
-<a href="https://github.com/kBorderon/bot-discord/issues"><img src="https://img.shields.io/github/issues/kBorderon/bot-discord.svg" alt="GitHub issues"></a>
-<a href="https://github.com/kBorderon/bot-discord/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/kBorderon/bot-discord.svg" alt="GitHub issues-closed"></a></p>
+<a href="https://github.com/kBorderon/ChappyBot/issues"><img src="https://img.shields.io/github/issues/kBorderon/ChappyBot.svg" alt="GitHub issues"></a>
+<a href="https://github.com/kBorderon/ChappyBot/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/kBorderon/ChappyBot.svg" alt="GitHub issues-closed"></a></p>
 <h2>Sommaire</h2>
 <ol>
 <li><a href="#presentation">Présentation</a></li>
@@ -75,7 +75,8 @@ Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels 
 <ul>
 <li>Déploiement du bot sur la plateforme Heroku ;</li>
 <li>Serveur Discord de test pour un accès au public <a href="https://discord.com/invite/u6pGvbG" title="Invitation pour rejoindre le serveur discord"><strong>Tests Bot Discord</strong></a> ;</li>
-<li>Utilisation de <a href="https://www.blagues-api.fr/" title="API utilisée pour la commande blague"><strong>Blagues API</strong></a> pour notre nouvelle commande.</li>
+<li>Utilisation de <a href="https://www.blagues-api.fr/" title="API utilisée pour la commande blague"><strong>Blagues API</strong></a> pour notre nouvelle commande blague ;</li>
+<li>Utilisation de <a href="https://www.weatherapi.com/" title="API utilisée pour la commande meteo"><strong>WeatherAPI</strong></a> pour notre nouvelle commande meteo.</li>
 </ul>
 </blockquote>
 <blockquote>
@@ -89,7 +90,7 @@ Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels 
 Pour savoir si vous possédez git, tapez la commande dans un terminal : <strong>git --version</strong> (vous devriez voir apparaître la version de git sinon une erreur).<br>
 Pour savoir si vous possédez nodejs, tapez la commande <strong>node --version</strong> (vous devriez voir apparaître la version de node sinon une erreur) et pour npm : <strong>npm --version</strong> (pareil, obtention de sa version ou erreur).</p>
 <h2>Partie 3 - Installation du bot <a name="installation"></a></h2>
-<p>Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (<strong>git checkout &lt;nom_branche&gt;</strong>), déplacez-vous sur cette branche (<strong>git checkout &lt;nom_branche&gt;</strong>) puis récupérez le contenu présent sur le dépôt git (<strong>git pull</strong>).</p>
+<p>Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (<strong>git checkout &lt;nom_branche&gt;</strong>), déplacez-vous sur cette branche (<strong>git branch &lt;nom_branche&gt;</strong>) puis récupérez le contenu présent sur le dépôt git (<strong>git pull</strong>).</p>
 <blockquote>
 <p>Pour récupérer le contenu du bot discord, veuillez vous déplacer sur une autre branche que la master, celle-ci ne présente que le projet.<br>
 Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire <strong>git checkout version_1</strong> (suivez ensuite les autres commandes).</p>
@@ -248,7 +249,7 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </tr>
 <tr>
 <td style="text-align:left">meteo</td>
-<td style="text-align:left">en cours</td>
+<td style="text-align:left">terminé</td>
 <td style="text-align:left">Utilitaire</td>
 <td style="text-align:left">Renvoie la météo pour une ville précise</td>
 </tr>
@@ -292,13 +293,13 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blague_help.html">blague/help</a></li><li><a href="module-blague_run.html">blague/run</a></li><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blague_help.html">blague/help</a></li><li><a href="module-blague_run.html">blague/run</a></li><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-meteo_help.html">meteo/help</a></li><li><a href="module-meteo_run.html">meteo/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 07 2020 19:52:06 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jun 11 2020 23:38:22 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

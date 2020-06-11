@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: evenements/logs/channelUpdate.js</title>
+    <title>JSDoc: Module: meteo/run</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,54 +17,234 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: evenements/logs/channelUpdate.js</h1>
+    <h1 class="page-title">Module: meteo/run</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const { MessageEmbed } = require("discord.js");
+        
+            
+        
+    
+</header>
 
-/**
- * Évènement channelUpdate
- * @author Kévin Borderon
- * @event Client#channelUpdate
- * @type {object}
- * @throws {DiscordAPIError} Missing permssions - Le bot ne dispose pas des droits suffisants pour consulter les logs serveurs
- * @description ATTENTION : une erreur peut être générée, si le bot ne dispose pas de droits assez élevés. Vous pouvez attribuer un rôle administrateur, car je ne développerai pas de commandes sensibles disponibles par l'ensemble des utilisateurs du serveur discord où se situe le bot (faites attention si vous développez des commandes sensibles : kick, ban, mute ..)
- * @property {Client} client - Référence au bot
- * @property {GuildChannel} channel - Référence au channel mis à jour à l'instant sur le serveur discord
- */
-module.exports = async (client, channel) => {
-	/* ATTENTION : une erreur peut être générée, si le bot ne dispose pas de droits assez élevés. Vous pouvez attribuer un rôle administrateur, car je ne développerai pas de commandes sensibles disponibles par 	 * l'ensemble des utilisateurs du serveur discord où se situe le bot (faites attention si vous développez des commandes sensibles : kick, ban, mute ..) */
-	
-	const journauxAuditGuilde = await channel.guild.fetchAuditLogs({
-		limit: 1, /* On récupère une seule instance de nos logs serveurs (le 1 équivaut à la dernière) */
-		type: 'CHANNEL_UPDATE' /* Type de l'évènement à récupérer (valeur : CHANNEL_UPDATE = 11) */
-	});
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Run de la commande meteo</p></div>
+        
 
-	/* On récupère la première donnée contenue dans nos journauxAuditGuilde */
-	const dernierChannelCree = journauxAuditGuilde.entries.first();
+        
+            
 
-	/* On récupère l'objet User ayant réalisé la création du channel */
-	const { executor } = dernierChannelCree;
 
-	const contenu = new MessageEmbed()
-		.setColor("#ed7474")
-		.setTitle("Mise à jour d'un channel")
-		.setTimestamp()
-		.setDescription(`Mise à jour du channel **${channel.name}** !`)
-		.setFooter(executor.username, executor.displayAvatarURL());
 
-	/* On envoie le message préparé, sur le channel ayant l'ID cible */
-	client.channels.cache.get('&lt;votre_id_channel>').send(contenu); /* A REMPLACER par l'id de votre salon cible */
-};
-</code></pre>
-        </article>
-    </section>
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>client</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Client.html">Client</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Référence au bot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Message</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Le message reçu par le bot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>categorie</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Les arguments du message</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Kévin Borderon</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="commandes_Utilitaire_meteo.js.html">commandes/Utilitaire/meteo.js</a>, <a href="commandes_Utilitaire_meteo.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
