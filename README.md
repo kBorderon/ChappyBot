@@ -9,7 +9,7 @@
 [![Heroku](https://img.shields.io/badge/Déploiement%20sur%20-Heroku-997fbc.svg?logo=Heroku)](https://heroku.com)
 [![Discord](https://img.shields.io/discord/711298566425018440.svg?label=Discord&logo=Discord&colorB=7289da)](https://discord.com/invite/u6pGvbG)
 [![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%FkBorderon%2FChappyBot)](https://twitter.com/intent/tweet?text=@Kevin_Borderon%20Projet%20ChappyBot:&url=https://github.com/kBorderon/ChappyBot)
-[![Codacy Badge](http://img.shields.io/codacy/grade/d00ca5344fa14239a31023e64b447113?label=Qualit%C3%A9%20du%20code)](https://www.codacy.com/manual/kBorderon/ChappyBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/ChappyBot&amp;utm_campaign=Badge_Grade) 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/fb60425650e94ae7bcd4fe9dddb651a7)](https://www.codacy.com/manual/kBorderon/ChappyBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/ChappyBot&amp;utm_campaign=Badge_Grade)
 [![discord.js](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
 [![GitHub issues](https://img.shields.io/github/issues/kBorderon/ChappyBot.svg)](https://github.com/kBorderon/ChappyBot/issues) 
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/kBorderon/ChappyBot.svg)](https://github.com/kBorderon/ChappyBot/issues?q=is%3Aissue+is%3Aclosed)
