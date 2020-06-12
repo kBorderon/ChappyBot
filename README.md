@@ -1,7 +1,7 @@
 # ChappyBot
 
 <div align="center">
-	<img  width="300" alt="Logo ChappyBot" src="https://i.goopics.net/Zo7db.png"><br>
+	<img width="300" alt="Logo ChappyBot" src="https://i.goopics.net/Zo7db.png">
 </div>
 
 [![Demandez moi n'importe quoi !](https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg)](https://github.com/kBorderon/ChappyBot/issues) 
@@ -22,7 +22,8 @@
 4. [Configuration du bot](#configuration)
 5. [Activation du bot](#activation)
 6. [Utilisation du bot](#utilisation)
-7. [Questions et demandes](#questions)
+7. [APIs externes](#apis)
+8. [Questions et demandes](#questions)
 
 ## Partie 1 - Présentation <a name="presentation"></a>
 
@@ -32,10 +33,18 @@ Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels 
 
 > #Nouveautés : 
 > - Déploiement du bot sur la plateforme Heroku ; 
-> - Serveur Discord de test pour un accès au public [**Tests Bot Discord**](https://discord.com/invite/u6pGvbG "Invitation pour rejoindre le serveur discord") ;
+> - Serveur Discord de test pour un accès au public [**ChappyBot Communauté**](https://discord.com/invite/u6pGvbG "Invitation pour rejoindre le serveur discord") ;
 > - Utilisation de [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague") pour notre nouvelle commande blague ;
-> - Utilisation de [**WeatherAPI**](https://www.weatherapi.com/ "API utilisée pour la commande meteo") pour notre nouvelle commande meteo.
+> - Utilisation de [**WeatherAPI**](https://www.weatherapi.com/ "API utilisée pour la commande meteo") pour notre nouvelle commande meteo Version 2 finale.
 
+> #FutursDéveloppements : 
+> - Enregistrement d'un débat au sein du discord ;
+> - Consultation des débats disponibles, enregistrés au format mp3 et stockés sur la machine lançant le bot ;
+> - Création de commandes musicales + radio ;
+> - Création de mini-jeux et système de classement + expérience ;
+> - Retour des anniversaires du jour ;
+> - Consultation du profil et différents éléments d'un profil d'un joueur (API League of Legends - Riot Games) ;
+> - Autres, à voir en fonction des demandes :).
 
 > Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-dessous. Le bot y est déployé grâce à la plateforme **[Heroku](https://www.heroku.com/)**. **Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.**  
 
@@ -134,7 +143,28 @@ Liste des commandes actuelles :
 
 D'autres commandes viendront s'ajouter au fur et à mesure.  
 
-## Partie 7 - Questions et demandes <a name="questions"></a>
+## Partie 7 - APIs externes <a name="apis"></a>
+### [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague") 
+
+Pour la création de notre commande **?blague <type_blague> parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']**, nous avons utilisé [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague"), vous trouverez ci-dessous deux exemples de cette commande.
+
+**?blague**  
+<img alt="Blague aléatoire (sans précision du type désiré)" src="https://i.goopics.net/0DxE2.png">
+
+**?blague dev**  
+<img alt="Blague aléatoire (sans précision du type désiré)" src="https://i.goopics.net/Y2lax.png">
+
+### [**WeatherAPI**](https://www.weatherapi.com/ "API utilisée pour la commande meteo")
+
+Pour la création de notre commande **?meteo <nom_ville>** ou **?meteo <nom_ville>, <nom_pays>**, nous avons utilisé [**WeatherAPI**](https://www.weatherapi.com/ "API utilisée pour la commande meteo"), vous trouverez ci-dessous deux exemples de cette commande, un cas de villes homonymes dans 2 pays distincts.
+
+**?meteo Vay** => l'API pointera sur la ville de Vay en Inde.  
+<img alt="Météo pour la ville de Vay en Inde" src="https://i.goopics.net/vgrqA.png">
+
+**?meteo Vay, France**  
+<img alt="Météo pour la ville de Vay en France" src="https://i.goopics.net/lNlyA.png">
+
+## Partie 8 - Questions et demandes <a name="questions"></a>
 
 >Si vous avez des questions ou des demandes d'ajout sur le bot, n'hésitez pas à me contacter grâce à :  
 >- mon mail (Cf. mon [**profil GitHub**](https://github.com/kBorderon "lien vers mon profil Github")) ;
