@@ -85,10 +85,10 @@ module.exports.run = (client, message, args) => {
 		const temperatureRessentieEmoji = '🌞'; 
 
 		/* Emoji thermometre personnalisé */
-		const thermometreEmoji = message.guild.emojis.cache.get('720745444434640936'); // Lire README.md dans le dossier contenu/emojis
+		const thermometreEmoji = message.guild.emojis.cache.get('721101554534580224'); // Lire README.md dans le dossier contenu/emojis
  
 		/* Emoji ultraviolet */
-		const uvEmoji = message.guild.emojis.cache.get('720745413988057228'); // Lire README.md dans le dossier contenu/emojis
+		const uvEmoji = message.guild.emojis.cache.get('721101554865668207'); // Lire README.md dans le dossier contenu/emojis
 
 		/* Emoji vent */
 		const ventEmoji = '💨';
