@@ -1,6 +1,6 @@
 const { MessageEmbed, MessageAttachment } = require('discord.js');
 const { PREFIX } = require('../../configuration/config.js');
-const image = new MessageAttachment('./contenu/rage.png');
+const image = new MessageAttachment('./contenu/images/rage.png');
 
 /**
  * Run de la commande rage

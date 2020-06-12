@@ -4,15 +4,15 @@
 	<img  width="300" alt="Logo ChappyBot" src="https://i.goopics.net/Zo7db.png"><br>
 </div>
 
-[![Demandez moi n'importe quoi !](https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg)](https://github.com/kBorderon/bot-discord/issues) 
-[![GitHub license](https://img.shields.io/github/license/kBorderon/bot-discord.svg?label=licence)](https://github.com/kBorderon/bot-discord/blob/master/LICENSE)	
+[![Demandez moi n'importe quoi !](https://img.shields.io/badge/Demandez%20moi-n'%20importe%20quoi-1abc9c.svg)](https://github.com/kBorderon/ChappyBot/issues) 
+[![GitHub license](https://img.shields.io/github/license/kBorderon/ChappyBot.svg?label=licence)](https://github.com/kBorderon/ChappyBot/blob/master/LICENSE)	
 [![Heroku](https://img.shields.io/badge/Déploiement%20sur%20-Heroku-997fbc.svg?logo=Heroku)](https://heroku.com)
 [![Discord](https://img.shields.io/discord/711298566425018440.svg?label=Discord&logo=Discord&colorB=7289da)](https://discord.com/invite/u6pGvbG)
-[![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%FkBorderon%2Fbot-discord)](https://twitter.com/intent/tweet?text=@Kevin_Borderon%20Projet%20bot-discord:&url=https://github.com/kBorderon/bot-discord)
-[![Codacy Badge](http://img.shields.io/codacy/grade/d00ca5344fa14239a31023e64b447113?label=Qualit%C3%A9%20du%20code)](https://www.codacy.com/manual/kBorderon/bot-discord?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/bot-discord&amp;utm_campaign=Badge_Grade) 
+[![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%FkBorderon%2FChappyBot)](https://twitter.com/intent/tweet?text=@Kevin_Borderon%20Projet%20ChappyBot:&url=https://github.com/kBorderon/ChappyBot)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/fb60425650e94ae7bcd4fe9dddb651a7)](https://www.codacy.com/manual/kBorderon/ChappyBot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kBorderon/ChappyBot&amp;utm_campaign=Badge_Grade)
 [![discord.js](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
-[![GitHub issues](https://img.shields.io/github/issues/kBorderon/bot-discord.svg)](https://github.com/kBorderon/bot-discord/issues) 
-[![GitHub issues-closed](https://img.shields.io/github/issues-closed/kBorderon/bot-discord.svg)](https://github.com/kBorderon/bot-discord/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub issues](https://img.shields.io/github/issues/kBorderon/ChappyBot.svg)](https://github.com/kBorderon/ChappyBot/issues) 
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/kBorderon/ChappyBot.svg)](https://github.com/kBorderon/ChappyBot/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Sommaire
 	
@@ -33,7 +33,8 @@ Pour la réalisation de ce projet, je me suis basé sur les guides et tutoriels 
 > #Nouveautés : 
 > - Déploiement du bot sur la plateforme Heroku ; 
 > - Serveur Discord de test pour un accès au public [**Tests Bot Discord**](https://discord.com/invite/u6pGvbG "Invitation pour rejoindre le serveur discord") ;
-> - Utilisation de [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague") pour notre nouvelle commande.
+> - Utilisation de [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague") pour notre nouvelle commande blague ;
+> - Utilisation de [**WeatherAPI**](https://www.weatherapi.com/ "API utilisée pour la commande meteo") pour notre nouvelle commande meteo.
 
 
 > Si vous souhaitez tester ce bot discord, je vous invite à rejoindre le serveur Discord ci-dessous. Le bot y est déployé grâce à la plateforme **[Heroku](https://www.heroku.com/)**. **Si le bot est déconnecté (version gratuite d'Heroku), merci de m'envoyer un message privé, pour que je le réactive.**  
@@ -51,7 +52,7 @@ Pour savoir si vous possédez nodejs, tapez la commande **node --version** (vous
 
 ## Partie 3 - Installation du bot <a name="installation"></a>
 
-Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (**git checkout <nom_branche>**), déplacez-vous sur cette branche (**git checkout <nom_branche>**) puis récupérez le contenu présent sur le dépôt git (**git pull**).  
+Une fois avoir cloné ce dépôt git. Placez vous sur la branche que vous souhaitez récupérer (**git checkout <nom_branche>**), déplacez-vous sur cette branche (**git branch <nom_branche>**) puis récupérez le contenu présent sur le dépôt git (**git pull**).  
 > Pour récupérer le contenu du bot discord, veuillez vous déplacer sur une autre branche que la master, celle-ci ne présente que le projet.   
 > Par exemple, si nous souhaitons récupérer le contenu de la branche version_1, nous devons faire **git checkout version_1** (suivez ensuite les autres commandes).  
 
@@ -126,7 +127,7 @@ Liste des commandes actuelles :
 |	roles								| terminé											| Serveur			| Renvoie les rôles disponibles sur ce serveur																	|
 |	blague							| terminé											|	Utilitaire	| Renvoie une blague aléatoirement																							|
 |	debat								| en cours										|	Utilitaire	|	Création d'un débat et de son enregistrement audio														|
-| meteo								| en cours 										| Utilitaire	| Renvoie la météo pour une ville précise																				|
+| meteo								| terminé 										| Utilitaire	| Renvoie la météo pour une ville précise																				|
 |	projet							|	terminé											|	Utilitaire	| Renvoie le lien du projet GitHub bot-discord																	|
 |	statutDebat					|	en cours										| Utilitaire	| Renvoie le statut du débat actuel																							|
 | stopDebat						| en cours										| Utilitaire	| Arrête le débat en cours et de son enregistrement audio												|

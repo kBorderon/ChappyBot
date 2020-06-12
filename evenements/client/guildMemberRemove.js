@@ -1,5 +1,5 @@
 const { MessageEmbed, MessageAttachment } = require("discord.js");
-const image = new MessageAttachment('./contenu/au_revoir.png');
+const image = new MessageAttachment('./contenu/images/au_revoir.png');
 
 /**
  * Évènement guildMemberRemove

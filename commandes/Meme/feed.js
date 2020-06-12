@@ -1,6 +1,6 @@
 const { MessageEmbed, MessageAttachment } = require('discord.js');
 const { PREFIX } = require('../../configuration/config.js');
-const image = new MessageAttachment('./contenu/feed.png');
+const image = new MessageAttachment('./contenu/images/feed.png');
 
 /**
  * Run de la commande feed

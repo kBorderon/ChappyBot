@@ -1,6 +1,6 @@
 const { MessageEmbed, MessageAttachment } = require('discord.js');
 const { PREFIX } = require('../../configuration/config.js');
-const image = new MessageAttachment('./contenu/sel.png')
+const image = new MessageAttachment('./contenu/images/sel.png')
 
 /**
  * Run de la commande sel
