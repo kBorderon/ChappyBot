@@ -6,17 +6,20 @@ const { PREFIX, TOKEN_METEO_API } = require('../../configuration/config.js');
  * Run de la commande meteo
  * @author Kévin Borderon	
  * @module meteo/run
+ * @description ATTENTION aux villes homonymes dans le même pays, aucune solution ne permet de distinguer ces 2 villes (par exemple Plouhinec Morbihan et Plouhinec Finistère).
+	Pour les villes homonymes dans 2 pays différents, il suffi d'indiquer ?meteo nom_ville, nom_pays comme par exemple ?meteo Vay, France et ?meteo Vay, Inde.
  * @param {Client} client - Référence au bot
  * @param {Message} message - Le message reçu par le bot
  * @param {Array.<String>} categorie - Les arguments du message
  */
 module.exports.run = (client, message, args) => {
-	/* Condition météorologique actuelle */
-	var conditionMeteo = '';
+	/* Conditions météorologiques actuelle, demain et après-demain */
+	var conditionsMeteos = new Array(3);  /* L'api gratuite, nous limite à 3 jours */
 
-	/* Contenu du message que nous envoyons */
+	/* Contenus du message que nous envoyons */
 	var description = '';
-	
+	var description2 = '';
+
 	/* Direction du vent */	
 	var directionVent = '';
 
@@ -26,26 +29,29 @@ module.exports.run = (client, message, args) => {
 	/* Indicateur journée : jour ou nuit */
 	var indicateurJournee = '';
 
-	/* Nom de la ville */
-	var nomVille = '';
+	/* Nom du pays */
+	var nomPays = '';
 
 	/* Nom de la région */
 	var nomRegion = '';
 
+	/* Nom de la ville */
+	var nomVille = '';
+
 	/* Précipitation */
 	var precipitation = '';
 
-	/* Probabilité de précipitations */
-	var probabilitePrecipitation = '';
+	/* Probabilités de précipitations pour aujourd'hui, demain et après-demain */
+	var probabilitesPrecipitation = new Array(3); /* L'api gratuite, nous limite à 3 jours */
 	
-	/* Température actuelle */
-	var temperature = '';
+	/* Températures actuelle, pour demain et après demain */
+	var temperatures = new Array(3); /* L'api gratuite, nous limite à 3 jours */
 
-	/* Température minimum */
-	var temperatureMinimum = '';
+	/* Températures minimums pour aujourd'hui, demain et après-demain */
+	var temperaturesMinimums = new Array(3); /* L'api gratuite, nous limite à 3 jours */
 
-	/* Température maximum */
-	var temperatureMaximum = '';
+	/* Températures maximums pour aujourd'hui, demain et après-demain */
+	var temperaturesMaximums = new Array(3); /* L'api gratuite, nous limite à 3 jours */
 
 	/* Température actuelle ressentie */
 	var temperatureRessentie = '';
@@ -150,8 +156,10 @@ module.exports.run = (client, message, args) => {
 					default: directionVent += 'erreur'; // Ne passera jamais là mais on ne sait jamais !
 				}
 
-				/* Actualisation de la condition météorologique actuelle */
-				conditionMeteo += donnees['current']['condition']['text'];
+				/* Actualisation des conditions météorologiques actuelle, demain et après-demain */
+				conditionsMeteos[0] = donnees['current']['condition']['text'];														/* Condition météorologique actuelle */
+				conditionsMeteos[1] = donnees['forecast']['forecastday'][1]['day']['condition']['text']; 	/* Condition météorologique demain */
+				conditionsMeteos[2] = donnees['forecast']['forecastday'][2]['day']['condition']['text']; 	/* Condition météorologique après-demain */	
 
 				/* Actualisation de l'humidité */
 				humidite += donnees['current']['humidity'] + '%';
@@ -159,28 +167,42 @@ module.exports.run = (client, message, args) => {
 				/* Actualisation de l'indicateur de journée */
 				indicateurJournee += donnees['current']['is_day'] === 1 ? 'jour' : 'nuit';
 
+				/* Actualisation du nom du pays */
+				nomPays += donnees['location']['country'];
+
 				/* Actualisation du nom de la région */
 				nomRegion += donnees['location']['region'];
 			
+				/* Actualisation du nom de la ville (au cas où on précise le pays dans la commande) */
+				nomVille = donnees['location']['name'];
+
 				/* Actualisation de la précipitation */
 				precipitation += donnees['current']['precip_in'] + ' mm';
 
-				/* Actualisation de la probabilité précipitation */
-				probabilitePrecipitation += donnees['forecast']['forecastday'][0]['day']['daily_chance_of_rain'] + '%';
+				/* Actualisation des probabilités de précipitation pour aujourd'hui, demain et après-demain */
+				probabilitesPrecipitation[0] = donnees['forecast']['forecastday'][0]['day']['daily_chance_of_rain'] + '%';	/* Probabilité de précipitation pour aujourd'hui */
+				probabilitesPrecipitation[1] = donnees['forecast']['forecastday'][1]['day']['daily_chance_of_rain'] + '%';	/* Probabilité de précipitation pour demain */
+				probabilitesPrecipitation[2] = donnees['forecast']['forecastday'][2]['day']['daily_chance_of_rain'] + '%';	/* Probabilité de précipitation pour après-demain */
 
 				/* Actualisation de l'émoji statut journée */
 				statutJourneeEmoji = "jour" === indicateurJournee ? "🌇":"🌃";
 
-				/* Actualisation de la température */
-				temperature += donnees['current']['temp_c'] + "°C";
-				
-				/* Actualisation de la température minimum */
-				temperatureMinimum += donnees['forecast']['forecastday'][0]['day']['mintemp_c'] + "°C";
+				/* Actualisation de la température actuelle, pour demain et après-demain */
+				temperatures[0] = donnees['current']['temp_c'] + "°C";
+				temperatures[1] = donnees['forecast']['forecastday'][1]['day']['avgtemp_c'] + "°C";
+				temperatures[2] = donnees['forecast']['forecastday'][2]['day']['avgtemp_c'] + "°C";		
+		
+				/* Actualisation de la température minimum pour aujourd'hui, pour demain et après-demain */
+				temperaturesMinimums[0] = donnees['forecast']['forecastday'][0]['day']['mintemp_c'] + "°C";		/* Température minimum pour aujourd'hui */
+				temperaturesMinimums[1] = donnees['forecast']['forecastday'][1]['day']['mintemp_c'] + "°C";		/* Température minimum pour demain */
+				temperaturesMinimums[2] = donnees['forecast']['forecastday'][2]['day']['mintemp_c'] + "°C";		/* Température minimum pour après-demain */
 
-				/* Actualisation de la température maximum */
-				temperatureMaximum += donnees['forecast']['forecastday'][0]['day']['maxtemp_c'] + "°C";
-	
-				/* Actualisation de la température resentie */
+				/* Actualisation de la température maximum pour aujourd'hui, pour demain et après-demain */
+				temperaturesMaximums[0] = donnees['forecast']['forecastday'][0]['day']['maxtemp_c'] + "°C"; 	/* Température maximum pour aujourd'hui */
+				temperaturesMaximums[1] = donnees['forecast']['forecastday'][1]['day']['maxtemp_c'] + "°C";		/* Température maximum pour demain */
+				temperaturesMaximums[2] = donnees['forecast']['forecastday'][2]['day']['maxtemp_c'] + "°C";		/* Température maximum pour après-demain */
+
+				/* Actualisation de la température ressentie */
 				temperatureRessentie += donnees['current']['feelslike_c'] + "°C";
 
 				/* Actualisation de l'ultraviolet */
@@ -189,25 +211,28 @@ module.exports.run = (client, message, args) => {
 				/* Actualisation du vent */
 				vent += donnees['current']['wind_kph'] + ` km/h en provenance ${directionVent}`;
 
-				/* Actualisation de la description */
-				description += `**${nomVille}, ${nomRegion}**\nActuellement **${conditionMeteo}**, avec une température de ${temperature}.`;
-
+				/* Actualisation des descriptions */
+				description += `**${nomVille}, ${nomRegion}, ${nomPays}**\nActuellement **${conditionsMeteos[0]}**, avec une température de ${temperatures[0]}.`;
+				description2 += `**Demain :** La condition métorologique sera **${conditionsMeteos[1]}**, avec une température minimale de **${temperaturesMinimums[1]}**, maximale de **${temperaturesMaximums[1]}**. Il y aura une température moyenne de **${temperatures[1]}** et **${probabilitesPrecipitation[1]} de probabilité de précipitations**.\n`;
+				description2 += `\n**Après-demain :** La condition métorologique sera **${conditionsMeteos[2]}**, avec une température minimale de **${temperaturesMinimums[2]}**, maximale de **${temperaturesMaximums[2]}**. Il y aura une température moyenne de **${temperatures[2]}** et **${probabilitesPrecipitation[2]} de probabilité de précipitations**.`;
+					
 				const contenu = new MessageEmbed()
 				.setColor("#4fd0ea")
-				.setTitle(`Météo ${nomVille}`)
+				.setTitle(`Météo ${nomVille}, ${nomPays}`)
 				.setURL("https://www.weatherapi.com/")
 				.setTimestamp()
 				.setDescription(description)
 				.addFields(
 					{ name: `${jourNuitEmoji} Statut journée`, value: `${statutJourneeEmoji} ${indicateurJournee}`, inline: true},
-					{ name: `${thermometreEmoji} Température min`, value: `${temperatureMinimum}`, inline: true}, 
-					{ name: `${thermometreEmoji} Température max`, value: `${temperatureMaximum}`, inline: true},
+					{ name: `${thermometreEmoji} Température min`, value: `${temperaturesMinimums[0]}`, inline: true}, 
+					{ name: `${thermometreEmoji} Température max`, value: `${temperaturesMaximums[0]}`, inline: true},
 					{ name: `${temperatureRessentieEmoji} Température ressentie`, value: `${temperatureRessentie}`, inline: true},
 					{ name: `${humiditeEmoji} Humidité`, value: `${humidite}`, inline: true},
 					{ name: `${ventEmoji} Vent`, value: `${vent}`, inline: true},
-					{ name: `${probabilitePrecipitationEmoji} Probabilité de précipitations`, value: `${probabilitePrecipitation}`, inline: true},
+					{ name: `${probabilitePrecipitationEmoji} Probabilité de précipitations`, value: `${probabilitesPrecipitation[0]}`, inline: true},
 					{ name: `${uvEmoji} Ultraviolet`, value: `${uv}`, inline: true},
-					{ name: `${precipitationEmoji} Précipitation`, value: `${precipitation}`, inline: true}
+					{ name: `${precipitationEmoji} Précipitation`, value: `${precipitation}`, inline: true},
+					{ name: `**__Informations pour les 2 journées à venir__**`, value: `${description2}`}
 				)
 				.setFooter(`Météo pour la ville ${nomVille}`);
 
@@ -222,6 +247,8 @@ module.exports.run = (client, message, args) => {
  * Help de la commande meteo
  * @author Kévin Borderon	
  * @module meteo/help
+ * @description ATTENTION aux villes homonymes dans le même pays, aucune solution ne permet de distinguer ces 2 villes (par exemple Plouhinec Morbihan et Plouhinec Finistère).
+	Pour les villes homonymes dans 2 pays différents, il suffi d'indiquer ?meteo nom_ville, nom_pays comme par exemple ?meteo Vay, France et ?meteo Vay, Inde.
  * @param {Array.<Meteo>} ['meteo', 'weather'] - Indique les aliases de la commande meteo
  * @param {boolean} args - Indique la présence OBLIGATOIRE d'arguments, ici ils ne sont pas obligatoires donc false
  * @param {string} categorie - Indique la catégorie de la commande meteo
@@ -237,5 +264,5 @@ module.exports.help = {
 	cooldown: 30,
 	description: 'Renvoie la météo pour une ville précise',
 	nom: 'meteo',
-	utilisation: "<nom_ville>"
+	utilisation: "<nom_ville> ou <nom_ville>, <nom_pays>"
 };
