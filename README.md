@@ -134,8 +134,12 @@ Liste des commandes actuelles :
 |	membres							|	terminé											|	Serveur			| Renvoie les informations concernant les membres présents sur ce serveur 			|	
 |	ping								| terminé											| Serveur			| Renvoie la latence du bot																											|
 |	roles								| terminé											| Serveur			| Renvoie les rôles disponibles sur ce serveur																	|
+| userinfos						| terminé											| Utilisateur | Renvoie les informations d'un utilisateur mentionné														|
+| userroles						| terminé											| Utilisateur	| Renvoie les rôles de l'utilisateur mentionné																	|
 |	blague							| terminé											|	Utilitaire	| Renvoie une blague aléatoirement																							|
+| cat									| terminé											| Utilitaire	| Renvoie une image ou un gif aléatoire d'un chat																|
 |	debat								| en cours										|	Utilitaire	|	Création d'un débat et de son enregistrement audio														|
+| dog									| terminé											| Utilitaire	| Renvoie une image ou un gif aléatoire d\'un chien															|
 | meteo								| terminé 										| Utilitaire	| Renvoie la météo pour une ville précise																				|
 |	projet							|	terminé											|	Utilitaire	| Renvoie le lien du projet GitHub bot-discord																	|
 |	statutDebat					|	en cours										| Utilitaire	| Renvoie le statut du débat actuel																							|

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: commandes/Serveur/ping.js</title>
+    <title>JSDoc: Module: dog/run</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,58 +17,234 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: commandes/Serveur/ping.js</h1>
+    <h1 class="page-title">Module: dog/run</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const { PREFIX } = require('../../configuration/config.js');
+        
+            
+        
+    
+</header>
 
-/**
- * Run de la commande ping
- * @author Kévin Borderon	
- * @module ping/run
- * @param {Client} client - Référence au bot
- * @param {Message} message - Le message reçu par le bot
- * @param {Array.&lt;String>} categorie - Les arguments du message
- */
-module.exports.run = (client, message, args) => {
-	/* Message déterminant la latence du bot */
-	message.channel.send("Ping...").then(monMessage => {
-		let ping = monMessage.createdTimestamp - message.createdTimestamp;
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Run de la commande dog</p></div>
+        
 
-		monMessage.edit(`Latence du bot ${ping} ms.`);	
-	});
-};
+        
+            
 
-/**
- * Help de la commande ping
- * @author Kévin Borderon	
- * @module ping/help
- * @param {Array.&lt;Ping>} ['ping'] - Indique les aliases de la commande ping
- * @param {boolean} args - Indique la présence OBLIGATOIRE d'arguments, ici ils ne sont pas obligatoires donc false
- * @param {string} categorie - Indique la catégorie de la commande ping
- * @param {number} cooldown - Indique le cooldown de la commande ping avant sa prochaine utilisation de la part du même utilisateur
- * @param {string} description - Indique la description de la commande ping
- * @param {string} nom - Indique le nom de la commande ping
- * @param {string} utilisation - Indique l'utilisation de la commande ping
- */
-module.exports.help = {
-	aliases:['ping'],	
-	args: false,
-	categorie: 'Serveur',
-	cooldown: 10,
-	description: 'Renvoie la latence du bot.',
-	nom: 'ping',
-	utilisation: 'aucun argument'
-};
-</code></pre>
-        </article>
-    </section>
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>client</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Client.html">Client</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Référence au bot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Message</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Le message reçu par le bot</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>categorie</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Les arguments du message</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Kévin Borderon</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="commandes_Utilitaire_dog.js.html">commandes/Utilitaire/dog.js</a>, <a href="commandes_Utilitaire_dog.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
