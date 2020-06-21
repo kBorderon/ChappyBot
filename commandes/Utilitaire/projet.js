@@ -39,7 +39,7 @@ module.exports.help = {
 	args: false,
 	categorie: 'Utilitaire',
 	cooldown: 10,
-	description: 'Renvoie le lien du projet GitHub bot-discord',
+	description: 'Renvoie le lien du projet GitHub bot-discord.',
 	nom: 'projet',
 	utilisation: 'aucun argument'
 };

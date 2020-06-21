@@ -103,7 +103,7 @@ module.exports.help = {
 	args: false,
 	categorie: 'Utilitaire',
 	cooldown: 10,
-	description: 'Renvoie une image ou un gif aléatoire d\'un chat',
+	description: 'Renvoie une image ou un gif aléatoire d\'un chat.',
 	nom: 'cat',
 	utilisation: "aucun argument ou <categorie_chat> parmi ['boxes', 'clothes', 'hats', 'sinks', 'space', 'sunglasses', 'ties']"
 };
