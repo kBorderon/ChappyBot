@@ -249,16 +249,40 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 <td style="text-align:left">Renvoie les rôles disponibles sur ce serveur</td>
 </tr>
 <tr>
+<td style="text-align:left">userinfos</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Utilisateur</td>
+<td style="text-align:left">Renvoie les informations d'un utilisateur mentionné</td>
+</tr>
+<tr>
+<td style="text-align:left">userroles</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Utilisateur</td>
+<td style="text-align:left">Renvoie les rôles de l'utilisateur mentionné</td>
+</tr>
+<tr>
 <td style="text-align:left">blague</td>
 <td style="text-align:left">terminé</td>
 <td style="text-align:left">Utilitaire</td>
 <td style="text-align:left">Renvoie une blague aléatoirement</td>
 </tr>
 <tr>
+<td style="text-align:left">cat</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Renvoie une image ou un gif aléatoire d'un chat</td>
+</tr>
+<tr>
 <td style="text-align:left">debat</td>
 <td style="text-align:left">en cours</td>
 <td style="text-align:left">Utilitaire</td>
 <td style="text-align:left">Création d'un débat et de son enregistrement audio</td>
+</tr>
+<tr>
+<td style="text-align:left">dog</td>
+<td style="text-align:left">terminé</td>
+<td style="text-align:left">Utilitaire</td>
+<td style="text-align:left">Renvoie une image ou un gif aléatoire d'un chien</td>
 </tr>
 <tr>
 <td style="text-align:left">meteo</td>
@@ -289,17 +313,27 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 <p>D'autres commandes viendront s'ajouter au fur et à mesure.</p>
 <h2>Partie 7 - APIs externes <a name="apis"></a></h2>
 <h3><a href="https://www.blagues-api.fr/" title="API utilisée pour la commande blague"><strong>Blagues API</strong></a></h3>
-<p>Pour la création de notre commande <strong>?blague &lt;type_blague&gt; parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']</strong>, nous avons utilisé <a href="https://www.blagues-api.fr/" title="API utilisée pour la commande blague"><strong>Blagues API</strong></a>, vous trouverez ci-dessous deux exemples de cette commande.</p>
+<p>Pour la création de notre commande <strong>?blague aucun argument ou &lt;type_blague&gt; parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']</strong>, nous avons utilisé <a href="https://www.blagues-api.fr/" title="API utilisée pour la commande blague"><strong>Blagues API</strong></a>, vous trouverez ci-dessous deux exemples de cette commande.</p>
 <p><strong>?blague</strong><br>
 <img alt="Blague aléatoire (sans précision du type désiré)" src="https://i.goopics.net/0DxE2.png"></p>
 <p><strong>?blague dev</strong><br>
-<img alt="Blague aléatoire (sans précision du type désiré)" src="https://i.goopics.net/Y2lax.png"></p>
+<img alt="Blague aléatoire (précision du type désiré)" src="https://i.goopics.net/Y2lax.png"></p>
 <h3><a href="https://www.weatherapi.com/" title="API utilisée pour la commande meteo"><strong>WeatherAPI</strong></a></h3>
 <p>Pour la création de notre commande <strong>?meteo &lt;nom_ville&gt;</strong> ou <strong>?meteo &lt;nom_ville&gt;, &lt;nom_pays&gt;</strong>, nous avons utilisé <a href="https://www.weatherapi.com/" title="API utilisée pour la commande meteo"><strong>WeatherAPI</strong></a>, vous trouverez ci-dessous deux exemples de cette commande, un cas de villes homonymes dans 2 pays distincts.</p>
 <p><strong>?meteo Vay</strong> =&gt; l'API pointera sur la ville de Vay en Inde.<br>
 <img alt="Météo pour la ville de Vay en Inde" src="https://i.goopics.net/vgrqA.png"></p>
 <p><strong>?meteo Vay, France</strong><br>
 <img alt="Météo pour la ville de Vay en France" src="https://i.goopics.net/lNlyA.png"></p>
+<h3><a href="https://thecatapi.com/" title="API utilisée pour la commande cat"><strong>TheCatAPI</strong></a></h3>
+<p>Pour la création de notre commande <strong>?cat aucun argument ou &lt;categorie_chat&gt; parmi ['boxes', 'clothes', 'hats', 'sinks', 'space', 'sunglasses', 'ties']</strong>, nous avons utilisé <a href="https://thecatapi.com/" title="API utilisée pour la commande cat"><strong>TheCatAPI</strong></a>, vous trouverez ci-dessous deux exemples de cette commande.</p>
+<p><strong>?cat</strong><br>
+<img alt="Image de chat aléatoire (sans précision de la catégorie désirée)" src="https://i.goopics.net/n42YQ.png"></p>
+<p><strong>?cat boxes</strong><br>
+<img alt="Image de chat aléatoire (précision de la catégorie désirée)" src="https://i.goopics.net/wkgr3.png"></p>
+<h3><a href="https://thedogapi.com/" title="API utilisée pour la commande dog"><strong>TheDogAPI</strong></a></h3>
+<p>Pour la création de notre commande <strong>?dog</strong>, nous avons utilisé <a href="https://thedogapi.com/" title="API utilisée pour la commande dog"><strong>TheDogAPI</strong></a>, vous trouverez ci-dessous un exemple de cette commande.</p>
+<p><strong>?dog</strong><br>
+<img alt="Image de chien aléatoire (sans précision de la catégorie désirée)" src="https://i.goopics.net/Y21VA.png"></p>
 <h2>Partie 8 - Questions et demandes <a name="questions"></a></h2>
 <blockquote>
 <p>Si vous avez des questions ou des demandes d'ajout sur le bot, n'hésitez pas à me contacter grâce à :</p>
@@ -319,13 +353,13 @@ Pour connaître l'utilisation d'une commande, veuillez écrire : <strong>?help &
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blague_help.html">blague/help</a></li><li><a href="module-blague_run.html">blague/run</a></li><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-meteo_help.html">meteo/help</a></li><li><a href="module-meteo_run.html">meteo/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-blague_help.html">blague/help</a></li><li><a href="module-blague_run.html">blague/run</a></li><li><a href="module-cat_help.html">cat/help</a></li><li><a href="module-cat_run.html">cat/run</a></li><li><a href="module-dog_help.html">dog/help</a></li><li><a href="module-dog_run.html">dog/run</a></li><li><a href="module-feed_help.html">feed/help</a></li><li><a href="module-feed_run.html">feed/run</a></li><li><a href="module-help_help.html">help/help</a></li><li><a href="module-help_run.html">help/run</a></li><li><a href="module-membres_help.html">membres/help</a></li><li><a href="module-membres_run.html">membres/run</a></li><li><a href="module-meteo_help.html">meteo/help</a></li><li><a href="module-meteo_run.html">meteo/run</a></li><li><a href="module-ping_help.html">ping/help</a></li><li><a href="module-ping_run.html">ping/run</a></li><li><a href="module-projet_help.html">projet/help</a></li><li><a href="module-projet_run.html">projet/run</a></li><li><a href="module-rage_help.html">rage/help</a></li><li><a href="module-rage_run.html">rage/run</a></li><li><a href="module-roles_help.html">roles/help</a></li><li><a href="module-roles_run.html">roles/run</a></li><li><a href="module-sel_help.html">sel/help</a></li><li><a href="module-sel_run.html">sel/run</a></li><li><a href="module-userinfo_help.html">userinfo/help</a></li><li><a href="module-userinfo_run.html">userinfo/run</a></li><li><a href="module-userroles_help.html">userroles/help</a></li><li><a href="module-userroles_run.html">userroles/run</a></li></ul><h3>Classes</h3><ul><li><a href="Client.html">Client</a></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:channelCreate">channelCreate</a></li><li><a href="Client.html#event:channelDelete">channelDelete</a></li><li><a href="Client.html#event:channelUpdate">channelUpdate</a></li><li><a href="Client.html#event:guildMemberAdd">guildMemberAdd</a></li><li><a href="Client.html#event:guildMemberRemove">guildMemberRemove</a></li><li><a href="Client.html#event:message">message</a></li><li><a href="Client.html#event:ready">ready</a></li></ul><h3>Global</h3><ul><li><a href="global.html#actualiserCompteur">actualiserCompteur</a></li><li><a href="global.html#chargerCommandes">chargerCommandes</a></li><li><a href="global.html#chargerEvenements">chargerEvenements</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 12 2020 23:36:22 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 21 2020 20:57:53 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

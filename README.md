@@ -134,8 +134,12 @@ Liste des commandes actuelles :
 |	membres							|	terminé											|	Serveur			| Renvoie les informations concernant les membres présents sur ce serveur 			|	
 |	ping								| terminé											| Serveur			| Renvoie la latence du bot																											|
 |	roles								| terminé											| Serveur			| Renvoie les rôles disponibles sur ce serveur																	|
+| userinfos						| terminé											| Utilisateur | Renvoie les informations d'un utilisateur mentionné														|
+| userroles						| terminé											| Utilisateur	| Renvoie les rôles de l'utilisateur mentionné																	|
 |	blague							| terminé											|	Utilitaire	| Renvoie une blague aléatoirement																							|
+| cat									| terminé											| Utilitaire	| Renvoie une image ou un gif aléatoire d'un chat																|
 |	debat								| en cours										|	Utilitaire	|	Création d'un débat et de son enregistrement audio														|
+| dog									| terminé											| Utilitaire	| Renvoie une image ou un gif aléatoire d\'un chien															|
 | meteo								| terminé 										| Utilitaire	| Renvoie la météo pour une ville précise																				|
 |	projet							|	terminé											|	Utilitaire	| Renvoie le lien du projet GitHub bot-discord																	|
 |	statutDebat					|	en cours										| Utilitaire	| Renvoie le statut du débat actuel																							|
@@ -146,13 +150,13 @@ D'autres commandes viendront s'ajouter au fur et à mesure.
 ## Partie 7 - APIs externes <a name="apis"></a>
 ### [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague") 
 
-Pour la création de notre commande **?blague <type_blague> parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']**, nous avons utilisé [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague"), vous trouverez ci-dessous deux exemples de cette commande.
+Pour la création de notre commande **?blague aucun argument ou <type_blague> parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']**, nous avons utilisé [**Blagues API**](https://www.blagues-api.fr/ "API utilisée pour la commande blague"), vous trouverez ci-dessous deux exemples de cette commande.
 
 **?blague**  
 <img alt="Blague aléatoire (sans précision du type désiré)" src="https://i.goopics.net/0DxE2.png">
 
 **?blague dev**  
-<img alt="Blague aléatoire (sans précision du type désiré)" src="https://i.goopics.net/Y2lax.png">
+<img alt="Blague aléatoire (précision du type désiré)" src="https://i.goopics.net/Y2lax.png">
 
 ### [**WeatherAPI**](https://www.weatherapi.com/ "API utilisée pour la commande meteo")
 
@@ -163,6 +167,23 @@ Pour la création de notre commande **?meteo <nom_ville>** ou **?meteo <nom_vill
 
 **?meteo Vay, France**  
 <img alt="Météo pour la ville de Vay en France" src="https://i.goopics.net/lNlyA.png">
+
+### [**TheCatAPI**](https://thecatapi.com/ "API utilisée pour la commande cat")
+
+Pour la création de notre commande **?cat aucun argument ou <categorie_chat> parmi ['boxes', 'clothes', 'hats', 'sinks', 'space', 'sunglasses', 'ties']**, nous avons utilisé [**TheCatAPI**](https://thecatapi.com/ "API utilisée pour la commande cat"), vous trouverez ci-dessous deux exemples de cette commande.
+
+**?cat**  
+<img alt="Image de chat aléatoire (sans précision de la catégorie désirée)" src="https://i.goopics.net/n42YQ.png">
+
+**?cat boxes**  
+<img alt="Image de chat aléatoire (précision de la catégorie désirée)" src="https://i.goopics.net/wkgr3.png">
+
+### [**TheDogAPI**](https://thedogapi.com/ "API utilisée pour la commande dog")
+
+Pour la création de notre commande **?dog**, nous avons utilisé [**TheDogAPI**](https://thedogapi.com/ "API utilisée pour la commande dog"), vous trouverez ci-dessous un exemple de cette commande.
+
+**?dog**  
+<img alt="Image de chien aléatoire (sans précision de la catégorie désirée)" src="https://i.goopics.net/Y21VA.png">
 
 ## Partie 8 - Questions et demandes <a name="questions"></a>
 

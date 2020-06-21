@@ -106,7 +106,7 @@ module.exports.help = {
 	args: false,
 	categorie: 'Utilitaire',
 	cooldown: 10,
-	description: 'Renvoie une blague aléatoirement',
+	description: 'Renvoie une blague aléatoirement.',
 	nom: 'blague',
 	utilisation: "aucun argument ou <type_blague> parmi ['beauf', 'blondes', 'dark', 'dev', 'global', 'limit']"
 };

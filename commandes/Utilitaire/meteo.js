@@ -262,7 +262,7 @@ module.exports.help = {
 	args: true,
 	categorie: 'Utilitaire',
 	cooldown: 30,
-	description: 'Renvoie la météo pour une ville précise',
+	description: 'Renvoie la météo pour une ville précise.',
 	nom: 'meteo',
 	utilisation: "<nom_ville> ou <nom_ville>, <nom_pays>"
 };
